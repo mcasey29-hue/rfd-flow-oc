@@ -1,16 +1,23 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RFD Flow OC</title>
 <style>
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #172033;
+  background: #f3f4f6;
+  color: #101010;
 }
 header {
-  background: #1265d8;
+  background: #101010;
   color: white;
-  padding: 25px;
+  padding: 30px 20px;
   text-align: center;
-}
-nav {
-  background: whi
+  border-bottom: 5px solid 
+
