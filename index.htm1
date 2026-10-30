@@ -2,8 +2,8 @@ DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RFD Flow OC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RFD Flow OC | Local Services Made Easy</title>
 <style>
 * {
   box-sizing: border-box;
@@ -11,13 +11,11 @@ DOCTYPE html>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f3f4f6;
-  color: #101010;
+  background: #f4f7f6;
+  color: #172033;
 }
 header {
   background: #101010;
   color: white;
   padding: 30px 20px;
-  text-align: center;
-  border-bottom: 5px solid 
-
+  text-align: center
