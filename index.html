@@ -1,79 +1,703 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<title>RFD FLOW OC - Every business in OC</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="RFD FLOW OC+LA+IE — discover local businesses across Orange County, Los Angeles County and the Inland Empire." name="description"/>
+<title>RFD FLOW OC+LA+IE — Discover Local. Support Local.</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a12;color:#fff;font-family:sans-serif;min-height:100vh}
-.header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;background:#0f0f17;border-bottom:1px solid #1f1f2e;position:sticky;top:0;z-index:20}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:0.5px}
-.logo-box{width:58px;height:26px;background:#fff;border-radius:3px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.pill{display:inline-flex;align-items:center;gap:8px;background:#15151f;border:1px solid #252538;border-radius:20px;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:0.5px;color:#cbd5e1;margin:22px 20px 0}
-.dot-green{width:10px;height:10px;background:#22c55e;border-radius:50%}
-.hero{padding:18px 20px 14px}
-.hero h1{font-size:42px;line-height:0.88;font-weight:900;letter-spacing:-1.5px}
-.hero h1 span.orange{color:#FF6B2B}
-.hero p{color:#8b8ba3;margin-top:18px;font-size:15px;line-height:1.6;max-width:92%}
-.official{display:flex;align-items:center;gap:12px;padding:16px 20px;margin:22px 0;background:#0f0f17;border-top:1px solid #1a1a28;border-bottom:1px solid #1a1a28}
-.official-logo{width:48px;height:34px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center}
-.official-text b{font-size:14px;display:block}
-.official-text span{font-size:12px;color:#8b8ba3}
-.search-box{background:#14141f;border:1px solid #252538;border-radius:28px;padding:16px;margin:0 16px 10px}
-.input-wrap{position:relative;margin-bottom:12px}
-.input-wrap .icon-left{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#999;font-size:14px}
-.input{width:100%;background:#fff;color:#111;border:none;border-radius:24px;padding:14px 16px 14px 38px;font-size:15px;outline:none}
-.row{display:flex;gap:12px}
-.any-box{display:flex;align-items:center;background:#fff;color:#111;border-radius:16px;padding:0 16px;gap:8px;min-width:92px;font-weight:700}
-.btn-search{flex:1;background:#FF6B2B;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:17px;padding:16px;cursor:pointer}
-.tags{padding:0 16px 20px;display:flex;flex-wrap:wrap;gap:10px}
-.tag{background:#1c1c2a;border:1px solid #2a2a3a;color:#a1a1b5;font-size:13px;padding:8px 16px;border-radius:20px;font-weight:600}
-.grid{padding:10px 14px 100px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{background:#13131f;border:1px solid #242438;border-radius:22px;padding:18px}
-.card-top{display:flex;justify-content:space-between;margin-bottom:28px}
-.icon{width:48px;height:48px;background:#0f0f18;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px}
-.count{font-size:13px;background:#1e1e2e;padding:5px 10px;border-radius:10px;font-weight:700}
-.card h3{font-size:15px;font-weight:700;margin-bottom:8px}
-.verified{font-size:12px;color:#8b8ba3;display:flex;gap:6px;align-items:center}
-.dot{width:8px;height:8px;background:#22c55e;border-radius:50%}
+:root{
+  --bg:#07090d; --panel:#10141c; --panel2:#151b25; --text:#f8fafc; --muted:#9aa6b7;
+  --gold:#f6c85f; --gold2:#ffdf88; --line:#263244; --green:#35d07f; --blue:#6ea8ff;
+  --danger:#ff6b6b; --shadow:0 18px 50px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 20% -10%,rgba(246,200,95,.16),transparent 30%),
+radial-gradient(circle at 80% 0%,rgba(110,168,255,.12),transparent 26%),
+var(--bg);color:var(--text);line-height:1.5}
+a{color:inherit}
+button,input,select{font:inherit}
+.wrap{width:min(1180px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(7,9,13,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:1000;letter-spacing:-.04em;font-size:22px}
+.brand span{color:var(--gold)}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.navlinks a{font-size:12px;text-decoration:none;padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:#dce6f2;background:#0d1118}
+.navlinks a.primary{background:var(--gold);color:#111;border-color:var(--gold);font-weight:900}
+.hero{padding:72px 0 34px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #725f31;border-radius:999px;color:var(--gold2);background:rgba(246,200,95,.08);font-size:12px;font-weight:800}
+.hero h1{font-size:clamp(42px,8vw,82px);line-height:.95;letter-spacing:-.055em;margin:18px 0 18px;max-width:930px}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:800px;font-size:17px;color:#b7c1d0;margin:0 0 24px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:12px 16px;text-decoration:none;font-weight:900;border:1px solid var(--line);background:#111822;color:white;cursor:pointer}
+.btn.gold{background:var(--gold);color:#111;border-color:var(--gold)}
+.btn.green{background:#173c2c;border-color:#2a7d56;color:#9cf2c0}
+.statbar{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:linear-gradient(180deg,#111722,#0d1219);border:1px solid var(--line);border-radius:16px;padding:16px}
+.stat strong{display:block;font-size:22px}
+.stat small{color:var(--muted)}
+.section{padding:26px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}
+.section-head h2{font-size:30px;letter-spacing:-.035em;margin:0}
+.section-head p{margin:0;color:var(--muted);max-width:600px}
+.feature-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:8px 0 6px;font-size:17px}
+.card p{margin:0;color:#aeb9c8;font-size:13px}
+.icon{font-size:26px}
+.search-panel{background:#0f141c;border:1px solid var(--line);border-radius:20px;padding:14px;display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:10px}
+.search-panel input,.search-panel select{width:100%;border-radius:12px;border:1px solid var(--line);background:#090d13;color:white;padding:12px}
+.search-panel button{border:0;border-radius:12px;padding:12px 18px;background:var(--gold);font-weight:950;cursor:pointer}
+.featured{border:1px solid #745f2c;background:linear-gradient(135deg,rgba(246,200,95,.14),rgba(255,255,255,.02));border-radius:22px;padding:22px;display:grid;grid-template-columns:1.4fr .6fr;gap:16px}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;border:1px solid var(--line)}
+.badge.verified{background:#123323;border-color:#236b48;color:#9af0bf}
+.badge.live{background:#311919;border-color:#7c3737;color:#ffb1b1}
+.badge.gold{background:#352b12;border-color:#77632a;color:#ffdd79}
+.score{display:flex;align-items:center;justify-content:center;flex-direction:column;border:1px solid #725f31;border-radius:18px;background:#0d1118;min-height:160px}
+.score strong{font-size:50px;color:var(--gold);line-height:1}
+.score span{font-size:12px;color:var(--muted);margin-top:6px}
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.biz{background:#10151d;border:1px solid var(--line);border-radius:18px;padding:16px;transition:.18s}
+.biz:hover{transform:translateY(-3px);border-color:#53647c}
+.biz h3{margin:8px 0 5px;font-size:16px}
+.biz p{margin:0;color:#a9b5c5;font-size:12px}
+.biz .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.live-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.live-item{border-left:3px solid var(--green);background:#0f1714;border-radius:14px;padding:14px;border-top:1px solid #1c3528;border-right:1px solid #1c3528;border-bottom:1px solid #1c3528}
+.live-item small{display:block;color:#8fb09d;margin-top:6px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.price{position:relative;background:#10151d;border:1px solid var(--line);border-radius:20px;padding:20px}
+.price.popular{border-color:#8a7333;box-shadow:0 0 0 1px rgba(246,200,95,.12),var(--shadow)}
+.price .tag{position:absolute;top:-12px;right:16px;background:var(--gold);color:#111;font-size:10px;font-weight:950;padding:6px 10px;border-radius:999px}
+.price h3{font-size:20px;margin:0}
+.amount{font-size:38px;font-weight:1000;margin:10px 0}
+.amount small{font-size:12px;color:var(--muted)}
+.price ul{padding-left:18px;color:#b7c1d0;font-size:13px;min-height:150px}
+.price .btn{width:100%}
+.guarantee{margin-top:14px;background:linear-gradient(135deg,#123323,#0f1714);border:1px solid #286b49;border-radius:18px;padding:18px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+.guarantee strong{font-size:18px}
+.guarantee p{margin:4px 0 0;color:#b5d6c4;font-size:12px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.contact-grid a{text-decoration:none}
+.contact{background:#10151d;border:1px solid var(--line);border-radius:16px;padding:16px}
+.contact small{color:var(--muted);display:block;margin-top:4px}
+footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
+.notice{margin-top:12px;color:#7e8b9b;font-size:11px}
+.hidden{display:none!important}
+@media(max-width:900px){
+  .statbar,.feature-grid,.biz-grid,.live-strip,.pricing,.contact-grid{grid-template-columns:1fr 1fr}
+  .search-panel{grid-template-columns:1fr 1fr}
+  .featured{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .nav{align-items:flex-start;padding:12px 0}.navlinks{display:none}
+  .hero{padding-top:44px}.hero h1{font-size:48px}
+  .statbar,.feature-grid,.biz-grid,.live-strip,.pricing,.contact-grid,.search-panel{grid-template-columns:1fr}
+  .featured{padding:16px}.guarantee{align-items:flex-start;flex-direction:column}
+}
+
+.phone-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.phone-row a{font-size:12px;text-decoration:none}
+.review-box{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.review-summary{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.stars{color:var(--gold);letter-spacing:1px;font-size:13px}
+.review-box small{color:var(--muted)}
+.review-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.review-actions a{font-size:11px;padding:7px 9px}
+.botm-note{margin-top:10px;padding:10px 12px;border-radius:12px;background:#111720;border:1px solid var(--line);font-size:12px;color:#aeb9c8}
+.chat-fab{position:fixed;right:18px;bottom:18px;z-index:90;border:0;border-radius:999px;background:var(--gold);color:#111;font-weight:1000;padding:13px 17px;box-shadow:0 16px 40px rgba(0,0,0,.45);cursor:pointer}
+.chatbox{position:fixed;right:18px;bottom:76px;z-index:90;width:min(360px,calc(100vw - 28px));background:#0d1219;border:1px solid #36445a;border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.55);overflow:hidden;display:none}
+.chatbox.open{display:block}
+.chathead{display:flex;justify-content:space-between;align-items:center;padding:14px 15px;border-bottom:1px solid var(--line);background:#121925}
+.chathead strong{font-size:14px}
+.chatbody{padding:14px}
+.chatmsg{background:#151d28;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12px;color:#c6d0dc}
+.chatquick{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.chatquick button{border:1px solid var(--line);background:#101722;color:#dce6f2;border-radius:999px;padding:7px 9px;font-size:11px;cursor:pointer}
+.chatbox textarea{width:100%;min-height:76px;resize:vertical;border:1px solid var(--line);border-radius:12px;background:#090d13;color:white;padding:10px}
+.chat-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.chat-actions a,.chat-actions button{text-decoration:none;border-radius:10px;padding:10px;border:1px solid var(--line);background:#111822;color:white;font-weight:800;text-align:center;font-size:12px;cursor:pointer}
+.chat-actions .send{background:var(--gold);color:#111;border-color:var(--gold)}
+@media(max-width:900px){.feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.feature-grid{grid-template-columns:1fr}.chatbox{right:14px;bottom:72px}.chat-fab{right:14px;bottom:14px}}
+
+.bot-user{align-self:flex-end;background:#2a2212;border:1px solid #725f31;border-radius:12px;padding:9px 11px;font-size:12px;max-width:86%}
+.bot-reply{align-self:flex-start;background:#151d28;border:1px solid var(--line);border-radius:12px;padding:9px 11px;font-size:12px;color:#d7e1ec;max-width:92%}
+
+.local-finds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.local-find{display:block;text-decoration:none;background:linear-gradient(180deg,#131a24,#0d1219);border:1px solid var(--line);border-radius:18px;padding:17px;transition:.18s;cursor:pointer}
+.local-find:hover{transform:translateY(-3px);border-color:#6b7d96;background:#151d28}
+.local-find .emoji{font-size:28px;display:block;margin-bottom:10px}
+.local-find strong{display:block;font-size:15px}
+.local-find small{display:block;color:var(--muted);margin-top:4px}
+.local-find .go{display:inline-block;margin-top:10px;color:var(--gold);font-size:12px;font-weight:900}
+.mall-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.mall-chip{border:1px solid var(--line);background:#0d1219;color:#d7e1ec;border-radius:999px;padding:8px 10px;font-size:11px;cursor:pointer}
+.mall-chip:hover{border-color:#725f31;color:var(--gold2)}
+@media(max-width:900px){.local-finds-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.local-finds-grid{grid-template-columns:1fr}}
+
+.review-policy{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.policy-card{background:#10151d;border:1px solid var(--line);border-radius:16px;padding:16px}
+.policy-card h3{margin:4px 0 6px;font-size:16px}
+.policy-card p{margin:0;color:#aeb9c8;font-size:12px}
+.verified-review{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;background:#123323;border:1px solid #236b48;color:#9af0bf}
+.pending-review{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;background:#2b2516;border:1px solid #6e5d2d;color:#ffe08a}
+.business-protection{margin-top:14px;background:linear-gradient(135deg,#121925,#0f141c);border:1px solid #314058;border-radius:18px;padding:18px}
+.business-protection strong{display:block;font-size:17px;margin-bottom:6px}
+.business-protection ul{margin:8px 0 0;padding-left:18px;color:#b7c1d0;font-size:12px}
+.chat-fab{pointer-events:auto!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
+.chatbox{pointer-events:auto!important}
+@media(max-width:900px){.review-policy{grid-template-columns:1fr}}
+
+.support-widget{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+}
+.support-widget > summary{
+  list-style:none;
+  cursor:pointer;
+  user-select:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:999px;
+  background:var(--gold);
+  color:#111;
+  font-weight:1000;
+  padding:13px 17px;
+  box-shadow:0 16px 40px rgba(0,0,0,.45);
+}
+.support-widget > summary::-webkit-details-marker{display:none}
+.support-widget[open] > summary{
+  background:var(--gold2);
+}
+.support-panel{
+  position:absolute;
+  right:0;
+  bottom:58px;
+  width:min(380px,calc(100vw - 28px));
+  max-height:min(72vh,620px);
+  overflow:auto;
+  background:#0d1219;
+  border:1px solid #36445a;
+  border-radius:18px;
+  box-shadow:0 24px 70px rgba(0,0,0,.55);
+}
+.support-faq{
+  display:grid;
+  gap:7px;
+  margin:10px 0;
+}
+.support-faq details{
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#101722;
+  overflow:hidden;
+}
+.support-faq summary{
+  cursor:pointer;
+  padding:9px 10px;
+  font-size:12px;
+  font-weight:850;
+  color:#dce6f2;
+}
+.support-faq p{
+  margin:0;
+  padding:0 10px 10px;
+  color:#aeb9c8;
+  font-size:11px;
+}
+@media(max-width:620px){
+  .support-widget{right:14px;bottom:14px}
+  .support-panel{width:calc(100vw - 28px);max-height:70vh}
+}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo"><div class="logo-box"><div style="width:100%;height:100%;background:linear-gradient(90deg,#fff 30%,#7CFF6B 100%);display:flex;align-items:center;justify-content:center;font-size:10px;color:#000;font-weight:900">RFD</div></div> RFD FLOW OC</div><div style="width:36px;height:36px;border:1px solid #2a2a3a;border-radius:50%;display:flex;align-items:center;justify-content:center">☰</div></div>
-
-<div class="pill"><div class="dot-green"></div> EVERY BUSINESS IN OC. NO CHAINS. NO SPAM.</div>
-
-<div class="hero">
-<h1>Every business in<br>OC.<br>Find your <span class="orange">exact</span><br>one.</h1>
-<p>Barbers, tacos, auto shops, contractors, lawyers, gyms, dentists, cleaners, shops - all local businesses in one place. Filter by your neighborhood, your budget, your exact need. No chains unless local franchise. No spam.</p>
+<header>
+<div class="wrap nav">
+<div class="brand">RFD <span>FLOW</span> OC+LA+IE</div>
+<nav class="navlinks">
+<a href="#small-shops">Small Shops</a><a href="#discover">Discover</a><a href="#reviews">Reviews</a><a href="#review-trust">Review Trust</a>
+<a href="#live">RFD LIVE</a>
+<a href="#pricing">For Business</a>
+<a href="https://instagram.com/rfd_flow.oc.la" rel="noopener" target="_blank">Instagram</a>
+<a class="primary" href="#pricing">Get Listed</a>
+</nav>
 </div>
-
-<div class="official">
-<div class="official-logo"><div style="font-size:9px;font-weight:900;color:#000">RFD</div></div>
-<div class="official-text"><b>Official RFD Flow</b><span>Verified marketplace • Theft Protected • OC Only</span></div>
+</header>
+<main>
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">✦ VERIFIED LOCAL DISCOVERY • OC + LA + IE</div>
+<h1>Find local businesses with <span>proof, freshness, and personality.</span></h1>
+<p>RFD FLOW is a local business discovery platform built for Orange County, Los Angeles County and the Inland Empire. Search listings, see verification status, explore live business updates and discover businesses worth knowing.</p>
+<div class="hero-actions">
+<a class="btn gold" href="#discover">🔎 Explore businesses</a>
+<a class="btn" href="#pricing">🏢 List your business</a>
+<a class="btn green" href="https://instagram.com/rfd_flow.oc.la" rel="noopener" target="_blank">📸 @rfd_flow.oc.la</a>
 </div>
-
-<div class="search-box">
-<div class="input-wrap"><span class="icon-left">⌕</span><input class="input" placeholder="What? barber, tacos, plumber..."></div>
-<div class="input-wrap"><span class="icon-left">◎</span><input class="input" placeholder="Where? Irvine, Santa Ana..."></div>
-<div class="row">
-<div class="any-box"><span>Any</span><span style="margin-left:auto">↕</span></div>
-<button class="btn-search">Search</button>
+<div class="statbar">
+<div class="stat"><strong>162+</strong><small>Cities represented across OC + LA + IE</small></div>
+<div class="stat"><strong>3</strong><small>Membership levels for businesses</small></div>
+<div class="stat"><strong>30 days</strong><small>Money-back guarantee on first paid membership</small></div>
+<div class="stat"><strong>Local-first</strong><small>Built around independent business discovery</small></div>
 </div>
 </div>
-
-<div class="tags"><div class="tag">200+ Businesses</div><div class="tag">Verified Local</div><div class="tag">No Chains</div><div class="tag">Theft Protected</div></div>
-
-<div class="grid">
-<div class="card"><div class="card-top"><div class="icon">✂️</div><div class="count">34</div></div><h3>Barbers & Salons</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🌮</div><div class="count">41</div></div><h3>Tacos & Food Trucks</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🔧</div><div class="count">28</div></div><h3>Auto Shops</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🏗️</div><div class="count">22</div></div><h3>Contractors</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">⚖️</div><div class="count">18</div></div><h3>Lawyers</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">💪</div><div class="count">26</div></div><h3>Gyms & Trainers</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🦷</div><div class="count">15</div></div><h3>Dentists</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🧹</div><div class="count">19</div></div><h3>Cleaners</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🛍️</div><div class="count">38</div></div><h3>Local Shops</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
-<div class="card"><div class="card-top"><div class="icon">🚿</div><div class="count">17</div></div><h3>Plumbers</h3><div class="verified"><div class="dot"></div> Verified OC only</div></div>
+</section>
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<div><h2>What makes RFD FLOW different</h2><p>Not another beige directory. These are the features that give RFD FLOW its own pulse.</p></div>
 </div>
+<div class="feature-grid">
+<div class="card"><div class="icon">✅</div><h3>RFD Verified</h3><p>A verification status for businesses whose core listing information has been checked. Payment never automatically guarantees verification.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>RFD LIVE</h3><p>Fresh updates for availability, specials, openings and announcements. Each update should show when it was posted.</p></div>
+<div class="card"><div class="icon">📊</div><h3>RFD Score</h3><p>A transparent score concept based on listing completeness, responsiveness and verified information rather than pay-to-win placement.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Business of the Month</h3><p>A rotating local spotlight open to Free, Basic and Pro Gold businesses. Selection is based on strong verified customer reviews, listing quality and local reputation, not payment.</p></div>
+<div class="card"><div class="icon">⭐</div><h3>Real Customer Reviews</h3><p>Customers can submit genuine feedback for listed businesses. Reviews are available on free listings too and should only be published after basic authenticity checks.</p></div></div>
+</div>
+</section>
+<section class="section" id="small-shops">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Small Shops &amp; Local Finds</h2>
+<p>Discover independent and smaller businesses inside malls, shopping centers, food halls, plazas and neighborhood strips. Tap a category to filter the RFD FLOW directory.</p>
+</div>
+</div>
+<div class="local-finds-grid">
+<a class="local-find" data-filter="mall shop" href="#discover">
+<span class="emoji">🏬</span>
+<strong>Small Mall Shops</strong>
+<small>Kiosks, specialty stores, local retailers and small storefronts inside malls.</small>
+<span class="go">Explore mall shops →</span>
+</a>
+<a class="local-find" data-filter="small restaurant" href="#discover">
+<span class="emoji">🍜</span>
+<strong>Small Restaurants</strong>
+<small>Independent restaurants, food-court spots, cafés, family-run kitchens and local favorites.</small>
+<span class="go">Explore restaurants →</span>
+</a>
+<a class="local-find" data-filter="clothing boutique" href="#discover">
+<span class="emoji">👕</span>
+<strong>Clothing Boutiques</strong>
+<small>Streetwear, vintage, local fashion, independent apparel and accessory shops.</small>
+<span class="go">Explore clothing →</span>
+</a>
+<a class="local-find" data-filter="dessert" href="#discover">
+<span class="emoji">🍨</span>
+<strong>Dessert &amp; Drink Shops</strong>
+<small>Boba, ice cream, bakeries, coffee, smoothies and specialty snack shops.</small>
+<span class="go">Explore desserts →</span>
+</a>
+<a class="local-find" data-filter="gift shop" href="#discover">
+<span class="emoji">🎁</span>
+<strong>Gift &amp; Specialty Shops</strong>
+<small>Collectibles, handmade goods, hobby stores, local gifts and niche specialty shops.</small>
+<span class="go">Explore specialty shops →</span>
+</a>
+<a class="local-find" data-filter="beauty" href="#discover">
+<span class="emoji">💈</span>
+<strong>Beauty &amp; Grooming</strong>
+<small>Barbers, salons, nail shops, beauty boutiques and grooming services.</small>
+<span class="go">Explore beauty →</span>
+</a>
+<a class="local-find" data-filter="market" href="#discover">
+<span class="emoji">🛍️</span>
+<strong>Markets &amp; Pop-Ups</strong>
+<small>Weekend markets, indoor marketplaces, pop-ups and rotating local vendors.</small>
+<span class="go">Explore markets →</span>
+</a>
+<a class="local-find" data-filter="family business" href="#discover">
+<span class="emoji">🏪</span>
+<strong>Family-Owned Businesses</strong>
+<small>Local stores and service businesses run by families and independent owners.</small>
+<span class="go">Explore family-owned →</span>
+</a>
+</div>
+<div class="mall-strip">
+<button class="mall-chip" data-filter="mall shop">🏬 Inside malls</button>
+<button class="mall-chip" data-filter="food court">🍱 Food courts</button>
+<button class="mall-chip" data-filter="plaza">📍 Shopping plazas</button>
+<button class="mall-chip" data-filter="boutique">✨ Boutiques</button>
+<button class="mall-chip" data-filter="small business">🤝 Small businesses</button>
+</div>
+<p class="notice">RFD FLOW can include Free listings for small businesses. Publish real business names, phone numbers, websites and reviews only after confirming them.</p>
+</div>
+</section>
+<section class="section" id="discover">
+<div class="wrap">
+<div class="section-head">
+<div><h2>Discover local</h2><p>Search by business name or category and narrow by region.</p></div>
+</div>
+<div class="search-panel">
+<input id="searchInput" placeholder="Try HVAC, barber, plumber, auto repair..." type="search"/>
+<select id="regionFilter">
+<option value="">All regions</option>
+<option value="OC">Orange County</option>
+<option value="LA">Los Angeles</option>
+<option value="IE">Inland Empire</option>
+</select>
+<select id="verifiedFilter">
+<option value="">Any status</option>
+<option value="verified">RFD Verified</option>
+</select>
+<button id="searchBtn">Search</button>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<div class="featured">
+<div>
+<span class="badge gold">🏆 BUSINESS OF THE MONTH</span>
+<h2 style="font-size:34px;margin:14px 0 6px">Atara Mechanical HVAC</h2>
+<p style="color:#b7c1d0;margin:0 0 14px">Featured by RFD FLOW. This spotlight can be expanded with verified service areas, contact information, offers and RFD LIVE updates as the profile is completed.</p>
+<div style="display:flex;gap:7px;flex-wrap:wrap">
+<span class="badge verified">✅ RFD Verified eligibility</span>
+<span class="badge live">● RFD LIVE ready</span>
+<span class="badge">OC + LA + IE discovery</span>
+</div>
+<div class="botm-note">Business of the Month is open to Free, Basic and Pro Gold listings. Paid membership does not buy the award. Strong verified customer reviews and local reputation matter most.</div></div>
+<div class="score">
+<strong>RFD</strong>
+<span>Featured local spotlight</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<div><h2>Directory</h2><p>Real businesses across OC, LA and the Inland Empire. Search, filter, tap any business card for Maps, or use Call, Directions and Website buttons.</p></div>
+<div id="resultCount" style="color:var(--muted);font-size:12px"></div>
+</div>
+<div class="biz-grid" id="bizGrid"><article aria-label="Open Atara Mechanical in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" data-region="IE" data-search="Atara Mechanical Rancho Cucamonga / Eastvale HVAC • Family-owned service business hvac family business small business contractor rancho cucamonga eastvale" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" rel="noopener" style="text-decoration:none" target="_blank">Atara Mechanical</a></h3><p>Rancho Cucamonga / Eastvale • HVAC • Family-owned service business</p><p style="margin-top:7px;color:#8491a2">10722 Arrow Rte Ste 704, Rancho Cucamonga, CA 91730</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19094711962">📞 909-471-1962</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://ataramechanical.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Atara%20Mechanical&amp;body=Business%3A%20Atara%20Mechanical%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Atara%20Mechanical">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Good Town Doughnuts in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Good Town Doughnuts Costa Mesa • The LAB Anti-Mall Doughnut shop • Small mall business dessert donuts doughnuts mall shop small business the lab costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Good Town Doughnuts</a></h3><p>Costa Mesa • The LAB Anti-Mall • Doughnut shop • Small mall business</p><p style="margin-top:7px;color:#8491a2">2930 Bristol St, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17144861870">📞 714-486-1870</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Good%20Town%20Doughnuts&amp;body=Business%3A%20Good%20Town%20Doughnuts%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Good%20Town%20Doughnuts">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Sun Dressed in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Sun Dressed Costa Mesa • The LAB Anti-Mall Independent clothing boutique clothing boutique mall shop small business fashion the lab costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Sun Dressed</a></h3><p>Costa Mesa • The LAB Anti-Mall • Independent clothing boutique</p><p style="margin-top:7px;color:#8491a2">2930 Bristol St Ste C102, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19494843664">📞 949-484-3664</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sun%20Dressed&amp;body=Business%3A%20Sun%20Dressed%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sun%20Dressed">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Folks Pizzeria in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Folks Pizzeria Costa Mesa • The CAMP Independent pizzeria • Restaurant small restaurant pizza pizzeria food plaza small business the camp costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Folks Pizzeria</a></h3><p>Costa Mesa • The CAMP • Independent pizzeria • Restaurant</p><p style="margin-top:7px;color:#8491a2">2937 Bristol St A102, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17146174888">📞 714-617-4888</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Folks%20Pizzeria&amp;body=Business%3A%20Folks%20Pizzeria%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Folks%20Pizzeria">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open The Kroft in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" data-region="OC" data-search="The Kroft Anaheim • Anaheim Packing House Comfort food • Food-hall restaurant small restaurant food court food hall mall shop anaheim packing house comfort food" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" rel="noopener" style="text-decoration:none" target="_blank">The Kroft</a></h3><p>Anaheim • Anaheim Packing House • Comfort food • Food-hall restaurant</p><p style="margin-top:7px;color:#8491a2">440 S Anaheim Blvd #109, Anaheim, CA 92805</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17146355900">📞 714-635-5900</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20Kroft&amp;body=Business%3A%20The%20Kroft%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20Kroft">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open ADYA in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" data-region="OC" data-search="ADYA Anaheim • Anaheim Packing House Indian restaurant • Food-hall business small restaurant indian food court food hall anaheim packing house small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" rel="noopener" style="text-decoration:none" target="_blank">ADYA</a></h3><p>Anaheim • Anaheim Packing House • Indian restaurant • Food-hall business</p><p style="margin-top:7px;color:#8491a2">440 S Anaheim Blvd Unit 201, Anaheim, CA 92805</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17145332392">📞 714-533-2392</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20ADYA&amp;body=Business%3A%20ADYA%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20ADYA">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Arcade Vintage in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Arcade Vintage Los Angeles • ROW DTLA Vintage clothing boutique clothing boutique vintage mall shop row dtla los angeles small business fashion" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Arcade Vintage</a></h3><p>Los Angeles • ROW DTLA • Vintage clothing boutique</p><p style="margin-top:7px;color:#8491a2">777 S Alameda St Ste 174, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+12132845300">📞 213-284-5300</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://arcadeshops.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Arcade%20Vintage&amp;body=Business%3A%20Arcade%20Vintage%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Arcade%20Vintage">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Pikunico in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Pikunico Los Angeles • ROW DTLA Japanese fried chicken • Restaurant small restaurant japanese chicken food row dtla los angeles small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Pikunico</a></h3><p>Los Angeles • ROW DTLA • Japanese fried chicken • Restaurant</p><p style="margin-top:7px;color:#8491a2">767 S Alameda St Ste 122, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+12132780407">📞 213-278-0407</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Pikunico&amp;body=Business%3A%20Pikunico%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Pikunico">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Cafe Dulce in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Cafe Dulce Los Angeles • ROW DTLA Coffee shop • Bakery cafe coffee bakery dessert mall shop row dtla los angeles small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Cafe Dulce</a></h3><p>Los Angeles • ROW DTLA • Coffee shop • Bakery</p><p style="margin-top:7px;color:#8491a2">777 S Alameda St #150, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+12135369633">📞 213-536-9633</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Cafe%20Dulce&amp;body=Business%3A%20Cafe%20Dulce%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Cafe%20Dulce">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Baba's Hot Chicken in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" data-region="IE" data-search="Baba's Hot Chicken Riverside • Riverside Food Lab Hot chicken • Food-hall restaurant small restaurant chicken food court food hall riverside food lab inland empire" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" rel="noopener" style="text-decoration:none" target="_blank">Baba's Hot Chicken</a></h3><p>Riverside • Riverside Food Lab • Hot chicken • Food-hall restaurant</p><p style="margin-top:7px;color:#8491a2">3605 Market St #6, Riverside, CA 92501</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19514702799">📞 951-470-2799</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Baba%27s%20Hot%20Chicken&amp;body=Business%3A%20Baba%27s%20Hot%20Chicken%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Baba%27s%20Hot%20Chicken">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Sun Kissed Harmony in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" data-region="IE" data-search="Sun Kissed Harmony Rancho Cucamonga • Victoria Gardens Family-owned health &amp; beauty boutique beauty boutique mall shop family business victoria gardens rancho cucamonga inland empire jewelry" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" rel="noopener" style="text-decoration:none" target="_blank">Sun Kissed Harmony</a></h3><p>Rancho Cucamonga • Victoria Gardens • Family-owned health &amp; beauty boutique</p><p style="margin-top:7px;color:#8491a2">12410 S Mainstreet, Rancho Cucamonga, CA 91739</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19093674544">📞 909-367-4544</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sun%20Kissed%20Harmony&amp;body=Business%3A%20Sun%20Kissed%20Harmony%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sun%20Kissed%20Harmony">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Temecula Lavender Co. in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" data-region="IE" data-search="Temecula Lavender Co. Temecula • Old Town Lavender gifts • Bath, body &amp; home gift shop boutique bath body home old town temecula small business family business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">Temecula Lavender Co.</a></h3><p>Temecula • Old Town • Lavender gifts • Bath, body &amp; home</p><p style="margin-top:7px;color:#8491a2">28561 Old Town Front St, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19516761931">📞 951-676-1931</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://temeculalavenderco.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Temecula%20Lavender%20Co.&amp;body=Business%3A%20Temecula%20Lavender%20Co.%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Temecula%20Lavender%20Co.">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open The Collection Temecula in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" data-region="IE" data-search="The Collection Temecula Temecula • Old Town Mother-daughter owned consignment boutique clothing boutique consignment family business old town temecula small business fashion" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">The Collection Temecula</a></h3><p>Temecula • Old Town • Mother-daughter owned consignment boutique</p><p style="margin-top:7px;color:#8491a2">42030 Main St, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19519543280">📞 951-954-3280</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://www.thecollectiontemecula.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20Collection%20Temecula&amp;body=Business%3A%20The%20Collection%20Temecula%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20Collection%20Temecula">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Old Town Sweet Shop in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" data-region="IE" data-search="Old Town Sweet Shop Temecula • Old Town Candy &amp; confectionery shop dessert candy gift shop old town temecula small business sweets" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">Old Town Sweet Shop</a></h3><p>Temecula • Old Town • Candy &amp; confectionery shop</p><p style="margin-top:7px;color:#8491a2">28545 Old Town Front St #101, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19516931919">📞 951-693-1919</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Old%20Town%20Sweet%20Shop&amp;body=Business%3A%20Old%20Town%20Sweet%20Shop%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Old%20Town%20Sweet%20Shop">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article></div>
+<p class="notice">RFD FLOW listings use publicly available business information. Details can change, so businesses can report corrections. RFD Verified remains separate and is only awarded after RFD completes its own verification.</p>
+</div>
+</section>
+<section class="section" id="live">
+<div class="wrap">
+<div class="section-head">
+<div><h2>RFD LIVE</h2><p>A place for participating businesses to post timely updates. The examples below demonstrate the format and are not live business claims.</p></div>
+</div>
+<div class="live-strip">
+<div class="live-item"><strong>● Accepting customers today</strong><small>Example update • posted recently</small></div>
+<div class="live-item"><strong>● Same-week appointments available</strong><small>Example update • posted recently</small></div>
+<div class="live-item"><strong>● New customer promotion</strong><small>Example update • posted recently</small></div>
+</div>
+</div>
+</section>
+<section class="section" id="reviews">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Real reviews, open to every listing</h2>
+<p>Free businesses can receive reviews too. RFD FLOW should never require a paid plan to collect customer feedback or qualify for Business of the Month.</p>
+</div>
+</div>
+<div class="feature-grid">
+<div class="card"><div class="icon">⭐</div><h3>Free reviews</h3><p>Customers can review Free, Basic and Pro Gold businesses.</p></div>
+<div class="card"><div class="icon">🧾</div><h3>Real experiences</h3><p>Only reviews based on an actual customer experience should be published.</p></div>
+<div class="card"><div class="icon">🛡️</div><h3>Review checks</h3><p>Flag obvious spam, duplicates, conflicts of interest and fake submissions before publication.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Award eligibility</h3><p>Strong verified reviews can help any listed business earn Business of the Month, even on the Free plan.</p></div>
+<div class="card"><div class="icon">📞</div><h3>Confirmed phone numbers</h3><p>Business phone numbers can be displayed on Free listings after they are confirmed.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="review-trust">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Verified reviews &amp; business protection</h2>
+<p>RFD FLOW protects customers’ right to honest feedback while also protecting businesses from fake reviews, review bombing and no-show complaints.</p>
+</div>
+</div>
+<div class="review-policy">
+<div class="policy-card">
+<span class="verified-review">✓ VERIFIED CUSTOMER REVIEW</span>
+<h3>Proof before publication</h3>
+<p>A review is published only after RFD FLOW can reasonably verify that the reviewer had a real transaction, appointment, order or service interaction with the business.</p>
+</div>
+<div class="policy-card">
+<span class="pending-review">⏳ PENDING CHECK</span>
+<h3>Negative is allowed, fake is not</h3>
+<p>Businesses cannot remove a review merely because it is critical. But reviews with no credible customer relationship, spam, threats, duplicates or fabricated claims are not published.</p>
+</div>
+<div class="policy-card">
+<span class="verified-review">↩ BUSINESS RESPONSE</span>
+<h3>Dispute and reply</h3>
+<p>A listed business can report a review, submit evidence, request a re-check and post a public response. RFD FLOW keeps the review decision separate from paid membership.</p>
+</div>
+</div>
+<div class="business-protection">
+<strong>🛡️ No-show protection</strong>
+<ul>
+<li>A person who never completed an appointment or transaction cannot post a service-quality review about an experience they did not receive.</li>
+<li>A verified cancellation or no-show may be recorded privately for dispute handling, but RFD FLOW does not publish a public customer blacklist.</li>
+<li>Businesses may publish their own cancellation, deposit and no-show policies on their profile.</li>
+<li>If a customer paid a deposit or had a real pre-service interaction, they may review that specific interaction if it can be verified.</li>
+</ul>
+</div>
+<p class="notice">For verification, ask only for limited proof such as an order number, appointment confirmation or redacted receipt. Never request full card numbers, bank credentials, passwords, Social Security numbers or other unnecessary sensitive information.</p>
+</div>
+</section>
+<section class="section" id="pricing">
+<div class="wrap">
+<div class="section-head">
+<div><h2>Plans for local businesses</h2><p>Start free, then upgrade when the extra visibility and tools are worth it.</p></div>
+</div>
+<div class="pricing">
+<div class="price">
+<h3>Free</h3><div class="amount">$0</div>
+<ul><li>Basic business listing</li><li>Business phone number + website</li><li>Customer reviews</li><li>Search visibility</li><li>Eligible to apply for RFD Verified</li><li>Eligible for Business of the Month based on strong verified reviews</li></ul>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20Free%20Listing">Start free</a>
+</div>
+<div class="price">
+<h3>Basic</h3><div class="amount">$19.99 <small>/ month</small></div>
+<ul><li>Everything in Free</li><li>Expanded profile</li><li>Promotional offers</li><li>Basic listing analytics</li><li>30-day money-back guarantee on initial paid membership</li></ul>
+<a class="btn gold" href="https://www.paypal.me/MalachiCasey290/19.99" rel="noopener" target="_blank">Pay $19.99 with PayPal</a>
+<a class="btn" href="https://cash.app/$MAcasey24/19.99" rel="noopener" target="_blank">Cash App $19.99</a>
+</div>
+<div class="price popular">
+<div class="tag">MOST POPULAR</div>
+<h3>Pro Gold</h3><div class="amount">$49.99 <small>/ month</small></div>
+<ul><li>Everything in Basic</li><li>Featured placement opportunities</li><li>RFD LIVE update tools</li><li>Advanced profile presentation</li><li>Priority business support</li><li>30-day money-back guarantee on initial paid membership</li></ul>
+<a class="btn gold" href="https://www.paypal.me/MalachiCasey290/49.99" rel="noopener" target="_blank">Pay $49.99 with PayPal</a>
+<a class="btn" href="https://cash.app/$MAcasey24/49.99" rel="noopener" target="_blank">Cash App $49.99</a>
+</div>
+</div>
+<div class="guarantee">
+<div><strong>🛡️ 30-Day Money-Back Guarantee</strong><p>If you are not satisfied within 30 days of your initial Basic or Pro Gold membership purchase, contact RFD FLOW to request a refund of that membership payment.</p></div>
+<a class="btn green" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20Refund%20Request">Request help</a>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<div class="section-head"><div><h2>Contact RFD FLOW</h2><p>One clean set of contact points, no private bank details in the public code.</p></div></div>
+<div class="contact-grid">
+<a href="mailto:rapidfrightdelivery@gmail.com"><div class="contact"><strong>📧 Email</strong><small>rapidfrightdelivery@gmail.com</small></div></a>
+<a href="tel:+19517456082"><div class="contact"><strong>📞 Call / Text</strong><small>951-745-6082</small></div></a>
+<a href="https://instagram.com/rfd_flow.oc.la" rel="noopener" target="_blank"><div class="contact"><strong>📸 Instagram</strong><small>@rfd_flow.oc.la</small></div></a>
+</div>
+</div>
+</section>
+</main>
+
+
+<section class="section">
+<div class="wrap">
+<div class="card">
+<h3 style="margin-top:0">Listing transparency</h3>
+<p>RFD FLOW starts with public business information such as business names, locations, phone numbers and official websites. A public listing is not the same as RFD Verified. Businesses can contact RFD FLOW to correct their listing, claim it, add details, or participate in RFD LIVE.</p>
+</div>
+</div>
+</section>
+
+<details class="support-widget" id="supportWidget">
+<summary aria-label="Open RFD FLOW support bot">🤖 Ask RFD Bot</summary>
+<div class="support-panel" id="chatBox">
+<div class="chathead">
+<strong>RFD FLOW Bot</strong>
+<span style="font-size:11px;color:#9aa6b7">Automatic support</span>
+</div>
+<div class="chatbody">
+<div id="chatLog" style="display:flex;flex-direction:column;gap:8px;max-height:260px;overflow:auto;margin-bottom:10px">
+<div class="chatmsg">Hi 👋 I’m the RFD FLOW Bot. Ask me about pricing, refunds, reviews, verification, no-shows, Business of the Month, or listing your business.</div>
+</div>
+<div class="support-faq">
+<details>
+<summary>💰 Pricing</summary>
+<p>Free is $0. Basic is $19.99/month. Pro Gold is $49.99/month.</p>
+</details>
+<details>
+<summary>⭐ Reviews</summary>
+<p>Reviews are available on all plans. RFD FLOW publishes reviews only after reasonable customer verification. Legitimate negative reviews are allowed; fake reviews and review bombing are not.</p>
+</details>
+<details>
+<summary>🛡️ No-show protection</summary>
+<p>A person who never received the service cannot review service quality. Businesses can dispute reviews and provide evidence. RFD FLOW does not publish a public customer blacklist.</p>
+</details>
+<details>
+<summary>✅ RFD Verified</summary>
+<p>RFD Verified requires checking core business information. Paying for a membership does not automatically earn verification.</p>
+</details>
+<details>
+<summary>🏆 Business of the Month</summary>
+<p>Free, Basic and Pro Gold businesses can qualify. Strong verified reviews, listing quality and local reputation matter most.</p>
+</details>
+</div>
+<div style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px">
+<input id="botInput" placeholder="Ask RFD FLOW..." style="width:100%;border:1px solid var(--line);border-radius:12px;background:#090d13;color:white;padding:10px" type="text"/>
+<button class="send" id="botSend" style="border:1px solid var(--gold);border-radius:12px;background:var(--gold);color:#111;font-weight:900;padding:10px 14px;cursor:pointer" type="button">Send</button>
+</div>
+<div class="chat-actions">
+<a href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20Support">Email support</a>
+<a href="sms:+19517456082">Text support</a>
+</div>
+<p class="notice">If JavaScript is blocked, the quick answers above still work. On the live GitHub Pages site, you can also type a question into the bot.</p>
+</div>
+</div>
+</details>
+<footer>
+<div class="wrap">
+<strong style="color:#dce6f2">RFD FLOW OC+LA+IE</strong><br/>
+    Discover Local. Support Local. Grow Local.
+    <div class="notice">Paid placement should be clearly labeled. RFD Verified should reflect an actual verification process and should not be automatically granted because a business pays for a membership.</div>
+<div class="notice" style="margin-top:12px">Launch policy: public listings may be free. RFD Verified, review verification, Business of the Month, and review moderation are editorial/trust decisions and are not automatically granted by payment.</div></div>
+</footer>
+<script>
+const input=document.getElementById('searchInput');
+const region=document.getElementById('regionFilter');
+const verified=document.getElementById('verifiedFilter');
+const cards=[...document.querySelectorAll('.biz')];
+const count=document.getElementById('resultCount');
+
+function filterBusinesses(){
+  const q=input.value.trim().toLowerCase();
+  const r=region.value;
+  const v=verified.value;
+  let shown=0;
+  cards.forEach(card=>{
+    const matchQ=!q || card.dataset.search.toLowerCase().includes(q);
+    const matchR=!r || card.dataset.region===r;
+    const matchV=!v || card.dataset.verified===v;
+    const show=matchQ&&matchR&&matchV;
+    card.classList.toggle('hidden',!show);
+    if(show) shown++;
+  });
+  count.textContent=shown+" listing"+(shown===1?"":"s")+" shown";
+}
+document.getElementById('searchBtn').addEventListener('click',filterBusinesses);
+input.addEventListener('input',filterBusinesses);
+region.addEventListener('change',filterBusinesses);
+verified.addEventListener('change',filterBusinesses);
+filterBusinesses();
+
+
+
+
+const botInput=document.getElementById('botInput');
+const botSend=document.getElementById('botSend');
+const chatLog=document.getElementById('chatLog');
+
+function botReply(text){
+  const q=(text||'').trim();
+  if(!q) return;
+  const u=document.createElement('div');
+  u.className='bot-user';
+  u.textContent=q;
+  chatLog.appendChild(u);
+
+  const s=q.toLowerCase();
+  let answer;
+
+  if(/price|cost|how much|basic|pro gold|membership/.test(s)){
+    answer='RFD FLOW has three plans: Free $0, Basic $19.99/month, and Pro Gold $49.99/month. Free listings can still show a confirmed phone number, receive real customer reviews, appear in search, apply for RFD Verified, and qualify for Business of the Month.';
+  } else if(/refund|money back|30 day|guarantee/.test(s)){
+    answer='RFD FLOW offers a 30-day money-back guarantee on the initial Basic or Pro Gold membership purchase. For a refund request, email rapidfrightdelivery@gmail.com.';
+  } else if(/review|rating|stars/.test(s)){
+    answer='Reviews are available on Free, Basic, and Pro Gold listings. Reviews should come from real customer experiences. RFD FLOW may check for obvious spam, duplicates, conflicts of interest, or fake submissions before publication.';
+  } else if(/verified|verification|verify/.test(s)){
+    answer='RFD Verified is based on checking core business information such as the business phone number, website, ownership or operating status. Paying for a plan does not automatically earn verification.';
+  } else if(/business of the month|business month|award|featured business/.test(s)){
+    answer='Business of the Month is open to Free, Basic, and Pro Gold businesses. Strong verified customer reviews, listing quality, and local reputation matter most. Paid membership does not buy the award.';
+  } else if(/phone|number|contact number/.test(s)){
+    answer='A confirmed business phone number can be displayed even on a Free listing. RFD FLOW should confirm the number before publishing it.';
+  } else if(/list my business|add my business|join|sign up|get listed|listing/.test(s)){
+    answer='You can start with a Free listing. Use the “Start free” button in the plans section or email rapidfrightdelivery@gmail.com with your business name, city, category, website, and phone number.';
+  } else if(/live|rfd live|promotion|special|availability/.test(s)){
+    answer='RFD LIVE is for fresh business updates such as availability, specials, openings, or announcements. Updates should show when they were posted so customers know they are current.';
+  } else if(/instagram|social/.test(s)){
+    answer='RFD FLOW is on Instagram at @rfd_flow.oc.la.';
+  } else if(/email/.test(s)){
+    answer='RFD FLOW support email: rapidfrightdelivery@gmail.com.';
+  } else if(/hello|hi|hey|yo/.test(s)){
+    answer='Hey 👋 I can help with pricing, reviews, RFD Verified, Business of the Month, RFD LIVE, refunds, or listing a business.';
+  } else {
+    answer='I don’t have a confident automatic answer for that yet. Try asking about pricing, reviews, RFD Verified, Business of the Month, RFD LIVE, refunds, or listing a business. For anything account-specific, email or text RFD FLOW support.';
+  }
+
+  const r=document.createElement('div');
+  r.className='bot-reply';
+  r.textContent=answer;
+  chatLog.appendChild(r);
+  chatLog.scrollTop=chatLog.scrollHeight;
+}
+
+
+
+if(botSend&&botInput){botSend.addEventListener('click',()=>{botReply(botInput.value);botInput.value='';botInput.focus();});}
+if(botInput){botInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();botReply(botInput.value);botInput.value='';}});}
+document.querySelectorAll('.chatquick button').forEach(btn=>{
+  btn.addEventListener('click',()=>botReply(btn.dataset.q));
+});
+
+
+document.querySelectorAll('[data-filter]').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const q=el.dataset.filter || '';
+    const search=document.getElementById('searchInput');
+    if(search){
+      search.value=q;
+      filterBusinesses();
+      setTimeout(()=>document.getElementById('discover').scrollIntoView({behavior:'smooth',block:'start'}),50);
+    }
+  });
+});
+
+
+// Extra launch-policy answers for the automatic RFD Bot.
+const originalBotReply = botReply;
+botReply = function(text){
+  const q=(text||'').trim();
+  const s=q.toLowerCase();
+  if(/fake review|bad review|negative review|review bombing|verify review|verified review/.test(s)){
+    const u=document.createElement('div'); u.className='bot-user'; u.textContent=q; chatLog.appendChild(u);
+    const r=document.createElement('div'); r.className='bot-reply';
+    r.textContent='RFD FLOW publishes reviews only after reasonable customer verification. Negative reviews are allowed when they come from a real customer experience, but fake reviews, review bombing, spam, duplicates, threats, or reviews from people who never had a real interaction are not published.';
+    chatLog.appendChild(r); chatLog.scrollTop=chatLog.scrollHeight; return;
+  }
+  if(/no show|no-show|cancellation|cancelled appointment|missed appointment/.test(s)){
+    const u=document.createElement('div'); u.className='bot-user'; u.textContent=q; chatLog.appendChild(u);
+    const r=document.createElement('div'); r.className='bot-reply';
+    r.textContent='RFD FLOW protects businesses from no-show complaints about services the customer never received. Businesses can publish cancellation or deposit policies and can dispute reviews. RFD FLOW does not create a public customer blacklist.';
+    chatLog.appendChild(r); chatLog.scrollTop=chatLog.scrollHeight; return;
+  }
+  if(/dispute|business response|reply to review|remove review/.test(s)){
+    const u=document.createElement('div'); u.className='bot-user'; u.textContent=q; chatLog.appendChild(u);
+    const r=document.createElement('div'); r.className='bot-reply';
+    r.textContent='Businesses can report a review, submit evidence, request a re-check, and post a public response. A review is not removed simply because it is negative; the issue is whether it is authentic and follows RFD FLOW review rules.';
+    chatLog.appendChild(r); chatLog.scrollTop=chatLog.scrollHeight; return;
+  }
+  return originalBotReply(text);
+};
+
+
+// Make each business card clickable without hijacking its individual action buttons.
+document.querySelectorAll('.biz[data-map-url]').forEach(card=>{
+  card.addEventListener('click',e=>{
+    if(e.target.closest('a,button,input,select,textarea')) return;
+    window.open(card.dataset.mapUrl,'_blank','noopener');
+  });
+  card.addEventListener('keydown',e=>{
+    if((e.key==='Enter'||e.key===' ') && !e.target.closest('a,button,input,select,textarea')){
+      e.preventDefault();
+      window.open(card.dataset.mapUrl,'_blank','noopener');
+    }
+  });
+});
+</script>
 </body>
 </html>
