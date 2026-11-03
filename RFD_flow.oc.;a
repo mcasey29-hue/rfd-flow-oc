@@ -262,7 +262,7 @@ button,a{pointer-events:auto!important;touch-action:manipulation!important;curso
 </ul>
 <a href="https://www.paypal.me/MalachiCasey290/19.99" target="_blank" rel="noopener" class="btn-pay paypal">🅿️ PayPal $19.99 — TAP — Clickable — Owner gets paid</a>
 <a href="https://cash.app/$MAcasey24/19.99" target="_blank" rel="noopener" class="btn-pay cash">💚 Cash App $19.99 — $MAcasey24 — TAP — Clickable — Owner gets paid</a>
-<a href="sms:+19517496028?body=Apple Pay $19.99 Starter — Owner gets paid — OC+LA+IE" class="btn-pay apple">🍎 Apple Pay $19.99 — TAP — Clickable — Owner gets paid</a>
+<a href="sms:+19517456082?body=Apple Pay $19.99 Starter — Owner gets paid — OC+LA+IE" class="btn-pay apple">🍎 Apple Pay $19.99 — TAP — Clickable — Owner gets paid</a>
 <a href="https://instagram.com/rfd_flow.oc.la" target="_blank" rel="noopener" class="btn-pay insta">📸 Insta rfd_flow.oc.la — Follow — DM PAID — Clickable</a>
 <p style="font-size:10px;color:#64748b;margin-top:8px">Secure — Owner gets paid directly — Text 951-749-6028 PAID after — Listed in 2 mins — Owner answers 24h — Everything clickable — $19.99 = $19.99 honest</p>
 </div>
@@ -296,7 +296,7 @@ button,a{pointer-events:auto!important;touch-action:manipulation!important;curso
 </ul>
 <a href="https://www.paypal.me/MalachiCasey290/49.99" target="_blank" rel="noopener" class="btn-pay paypal" style="background:#003087;color:#FFC439;border-color:#FFC439">🅿️ PayPal $49.99 — TAP — Clickable — Owner gets paid — Pro chat 24h — IE</a>
 <a href="https://cash.app/$MAcasey24/49.99" target="_blank" rel="noopener" class="btn-pay cash">💚 Cash App $49.99 — $MAcasey24 — TAP — Clickable — Owner gets paid — Instant</a>
-<a href="sms:+19517496028?body=Apple Pay $49.99 Pro — Owner gets paid — Pro chat 24h — OC+LA+IE" class="btn-pay apple">🍎 Apple Pay $49.99 — TAP — Clickable — Owner gets paid</a>
+<a href="sms:+19517456082?body=Apple Pay $49.99 Pro — Owner gets paid — Pro chat 24h — OC+LA+IE" class="btn-pay apple">🍎 Apple Pay $49.99 — TAP — Clickable — Owner gets paid</a>
 <a href="https://instagram.com/rfd_flow.oc.la" target="_blank" rel="noopener" class="btn-pay insta">📸 Insta rfd_flow.oc.la — DM Pro — Owner answers 24h — Clickable — IE featured</a>
 <p style="font-size:10px;color:#0f172a;margin-top:8px;font-weight:700">🔥 Everything 100% clickable — Real button + a href — No div onclick ★ break — OC+LA+IE 162+ cities — Pro = Unlimited + Homepage + Top permanent + Gold + Pro chat 24h priority + No-call refund + Tool protection $500 + Two-way reviews + No competitor ads + Exclusive leads + Analytics + Unlimited photos + Newsletter + Insta featured + Social boost + Bad review protection + Price lock + Owner gets paid directly — $49.99 honest vs Angi $400/Yelp $300 — Owner answers 24h — Clickable — IE added</p>
 </div>
@@ -323,8 +323,8 @@ button,a{pointer-events:auto!important;touch-action:manipulation!important;curso
 <h3 id="mTitle">Business Name</h3>
 <p id="mMeta" style="font-size:12px;color:#64748b;margin-top:4px"></p>
 <div class="modal-actions">
-<a id="mCall" class="call" href="tel:+19517496028">📞 Call Business — Clickable</a>
-<a id="mText" class="text" href="sms:+19517496028">💬 Text Business — Clickable</a>
+<a id="mCall" class="call" href="tel:+19517456082">📞 Call Business — Clickable</a>
+<a id="mText" class="text" href="sms:+19517456082">💬 Text Business — Clickable</a>
 <button type="button" onclick="openChatFromModal()" style="background:#3b82f6;color:#fff;border-color:#3b82f6">💬 Chat — Pro vs Non-pro — Owner answers 24h — Clickable</button>
 <a id="mPay" class="paypal" href="https://www.paypal.me/MalachiCasey290/19.99" target="_blank" rel="noopener">💳 Pay — Owner gets paid — $19.99 — Clickable</a>
 <a id="mEmail" href="mailto:rapidfrightdelivery@gmail.com" style="background:#fff;color:#0f172a">📧 Email Owner — 951-749-6028 — 24h answer — Clickable</a>
@@ -388,8 +388,8 @@ const rating=el.dataset.rating;
 const price=el.dataset.price;
 document.getElementById('mTitle').innerText=name;
 document.getElementById('mMeta').innerText=city+' • '+cat+' • '+rating+'★ • '+price+' • Verified • Two-way reviews • OC+LA+IE 162+ cities • Pro chat 24h • Owner answers 24h • Insta rfd_flow.oc.la • Everything 100% clickable — Real button + data-* — No ★ break';
-document.getElementById('mCall').href='tel:+19517496028';
-document.getElementById('mText').href='sms:+19517496028?body=Hi, found '+encodeURIComponent(name)+' on RFD FLOW OC+LA+IE — Insta rfd_flow.oc.la — ';
+document.getElementById('mCall').href='tel:+19517456082';
+document.getElementById('mText').href='sms:+19517456082?body=Hi, found '+encodeURIComponent(name)+' on RFD FLOW OC+LA+IE — Insta rfd_flow.oc.la — ';
 document.getElementById('mPay').href='https://www.paypal.me/MalachiCasey290/19.99';
 document.getElementById('bizModal').classList.add('active');
 }
@@ -452,7 +452,7 @@ const input=document.getElementById('chatInput');
 const body=document.getElementById('chatBody');
 const q=input.value.trim();
 if(!q)return;
-const ownerCode=['owner','malachi','9517496028','MalachiCasey290','macasey24'];
+const ownerCode=['owner','malachi','9517456082','MalachiCasey290','macasey24'];
 const isOwner=ownerCode.some(c=>q.toLowerCase().includes(c.toLowerCase()));
 const userDiv=document.createElement('div');
 userDiv.className=isOwner?'msg owner':currentTab==='pro'?'msg pro':currentTab==='ie'?'msg ie':'msg user';
