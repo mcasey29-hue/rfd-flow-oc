@@ -220,6 +220,213 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
   .support-widget{right:14px;bottom:14px}
   .support-panel{width:calc(100vw - 28px);max-height:70vh}
 }
+
+.clear-search{
+  border:1px solid var(--line)!important;
+  background:#111822!important;
+  color:#fff!important;
+}
+.search-help{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:11px;
+}
+.no-results{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#10151d;
+  color:#b7c1d0;
+  font-size:12px;
+}
+@media(min-width:901px){
+  .search-panel{grid-template-columns:2fr 1fr auto auto}
+}
+
+/* RFD FLOW visual upgrade */
+body{
+  background:
+    radial-gradient(circle at 12% 0%,rgba(246,200,95,.18),transparent 24%),
+    radial-gradient(circle at 88% 8%,rgba(110,168,255,.13),transparent 24%),
+    linear-gradient(180deg,#07090d 0%,#090d13 55%,#07090d 100%);
+}
+header{border-bottom:1px solid rgba(246,200,95,.18);box-shadow:0 8px 32px rgba(0,0,0,.18)}
+.brand{display:flex;align-items:center;gap:8px}
+.brand:before{
+  content:"R";width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;
+  border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#101010;font-size:15px;font-weight:1000;box-shadow:0 8px 24px rgba(246,200,95,.2)
+}
+.hero{position:relative;overflow:hidden;padding:86px 0 52px}
+.hero:before{
+  content:"";position:absolute;inset:18px 3% auto auto;width:360px;height:360px;border-radius:50%;
+  border:1px solid rgba(246,200,95,.08);
+  box-shadow:0 0 0 55px rgba(246,200,95,.025),0 0 0 110px rgba(246,200,95,.015);
+  pointer-events:none
+}
+.hero h1{max-width:980px;text-wrap:balance}
+.hero p{font-size:18px;max-width:760px}
+.hero-actions .btn{min-height:46px;transition:.2s ease}
+.hero-actions .btn:hover{transform:translateY(-2px)}
+.trust-row{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.trust-pill{
+  display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;padding:8px 11px;color:#c8d2df;background:rgba(17,24,34,.72);
+  backdrop-filter:blur(10px);font-size:11px;font-weight:800
+}
+.trending-wrap{padding:4px 0 26px}
+.trending{
+  border:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(246,200,95,.08),rgba(110,168,255,.05),rgba(246,200,95,.04));
+  border-radius:18px;padding:12px;display:flex;align-items:center;gap:10px;overflow:auto;scrollbar-width:none
+}
+.trending::-webkit-scrollbar{display:none}
+.trending-label{flex:0 0 auto;color:var(--gold2);font-weight:1000;font-size:11px;letter-spacing:.05em}
+.trending a{
+  flex:0 0 auto;text-decoration:none;color:#dce6f2;background:#101722;border:1px solid var(--line);
+  border-radius:999px;padding:8px 11px;font-size:11px;transition:.18s
+}
+.trending a:hover{color:#111;background:var(--gold);border-color:var(--gold)}
+.section-head h2:after{
+  content:"";display:block;width:44px;height:3px;margin-top:8px;border-radius:999px;
+  background:linear-gradient(90deg,var(--gold),transparent)
+}
+.feature-grid .card,.local-find,.biz,.price,.contact{
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+}
+.feature-grid .card:hover,.local-find:hover,.biz:hover,.price:hover,.contact:hover{
+  transform:translateY(-4px);border-color:#5e6f88;box-shadow:0 20px 55px rgba(0,0,0,.28)
+}
+.local-find{position:relative;overflow:hidden}
+.local-find:after{
+  content:"";position:absolute;width:90px;height:90px;right:-30px;top:-30px;border-radius:50%;
+  background:rgba(246,200,95,.08)
+}
+.search-panel{position:sticky;top:80px;z-index:25;box-shadow:0 18px 45px rgba(0,0,0,.22)}
+.biz{position:relative;overflow:hidden}
+.biz:before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--gold),rgba(110,168,255,.7))
+}
+.biz h3 a{color:#f7f9fc}
+.biz h3 a:hover{color:var(--gold2)}
+.region-showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.region-card{
+  text-decoration:none;min-height:170px;border-radius:20px;padding:18px;border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01)),#10151d;
+  position:relative;overflow:hidden;transition:.18s
+}
+.region-card:after{
+  content:"";position:absolute;width:180px;height:180px;right:-70px;bottom:-80px;border-radius:50%;
+  background:rgba(246,200,95,.08)
+}
+.region-card .region-code{font-size:42px;font-weight:1000;color:var(--gold);letter-spacing:-.06em}
+.region-card strong{display:block;font-size:18px;margin-top:6px}
+.region-card small{display:block;color:var(--muted);margin-top:5px;max-width:220px}
+.region-card:hover{border-color:#76622e;transform:translateY(-3px)}
+.launch-cta{
+  margin-top:16px;border:1px solid #6f5d2d;border-radius:22px;padding:24px;
+  background:radial-gradient(circle at 85% 20%,rgba(246,200,95,.18),transparent 30%),linear-gradient(135deg,#151813,#10141c);
+  display:flex;justify-content:space-between;align-items:center;gap:18px
+}
+.launch-cta h3{font-size:25px;margin:0 0 5px}
+.launch-cta p{margin:0;color:#aeb9c8;max-width:650px}
+@keyframes floatIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hero .eyebrow,.hero h1,.hero p,.hero-actions,.statbar{animation:floatIn .55s ease both}
+.hero h1{animation-delay:.05s}.hero p{animation-delay:.1s}.hero-actions{animation-delay:.15s}.statbar{animation-delay:.2s}
+@media(max-width:900px){.region-showcase{grid-template-columns:1fr}.search-panel{position:relative;top:auto}}
+@media(max-width:620px){.hero{padding-top:52px}.hero h1{font-size:46px}.launch-cta{align-items:flex-start;flex-direction:column}}
+
+.pricing{grid-template-columns:repeat(4,1fr)}
+.price ul{min-height:250px}
+@media(max-width:1050px){.pricing{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.pricing{grid-template-columns:1fr}}
+
+.price ul{min-height:360px}
+#upgrade-benefits .feature-grid{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1050px){#upgrade-benefits .feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){#upgrade-benefits .feature-grid{grid-template-columns:1fr}}
+
+.price ul{min-height:470px}
+.plan-compare-grid{
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  background:#0f141c;
+}
+.compare-row{
+  display:grid;
+  grid-template-columns:2fr repeat(4,1fr);
+  gap:8px;
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  align-items:center;
+  font-size:12px;
+}
+.compare-row:last-child{border-bottom:0}
+.compare-row span:not(:first-child){text-align:center}
+.compare-head{
+  background:#151b25;
+  color:var(--gold2);
+  font-weight:900;
+}
+@media(max-width:760px){
+  .compare-row{grid-template-columns:1.7fr repeat(4,.8fr);font-size:10px;padding:10px 8px}
+}
+
+.price ul{min-height:560px}
+#conversion-tools .feature-grid,#marketing-assets .feature-grid{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1050px){
+  #conversion-tools .feature-grid,#marketing-assets .feature-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  #conversion-tools .feature-grid,#marketing-assets .feature-grid{grid-template-columns:1fr}
+}
+
+#free-value .feature-grid{grid-template-columns:repeat(5,1fr)}
+.price ul{min-height:620px}
+@media(max-width:1050px){#free-value .feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){#free-value .feature-grid{grid-template-columns:1fr}}
+
+/* ===== RFD FLOW growth-platform features ===== */
+.profile-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.profile-tag{font-size:10px;padding:5px 8px;border-radius:999px;border:1px solid var(--line);background:#0d1219;color:#b9c5d4}
+.biz-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.biz-actions button,.biz-actions a{font-size:11px}
+.save-btn.saved{background:#2d2410!important;border-color:#7c662a!important;color:var(--gold2)!important}
+.deals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.deal-card{background:linear-gradient(180deg,#141a23,#0e131a);border:1px solid var(--line);border-radius:18px;padding:17px}
+.deal-card h3{margin:7px 0 5px}.deal-card p{color:#aeb9c8;font-size:12px;margin:0}
+.pulse-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pulse-card{background:#10151d;border:1px solid var(--line);border-radius:16px;padding:15px}
+.pulse-card strong{display:block;font-size:25px;color:var(--gold)}.pulse-card small{color:var(--muted)}
+.favorites-panel{display:none;margin-top:12px;border:1px solid var(--line);border-radius:16px;padding:14px;background:#0f141c}
+.favorites-panel.open{display:block}
+.favorite-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.favorite-item:last-child{border-bottom:0}.favorite-item small{color:var(--muted)}
+.owner-tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.owner-tool{background:#10151d;border:1px solid var(--line);border-radius:16px;padding:16px}
+.owner-tool h3{margin:6px 0}.owner-tool p{margin:0;color:#aeb9c8;font-size:12px}
+@media(max-width:900px){.deals-grid,.pulse-grid,.owner-tools-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.deals-grid,.pulse-grid,.owner-tools-grid{grid-template-columns:1fr}}
+
+.square-subscribe{
+  width:100%;
+  justify-content:center;
+  margin-top:10px;
+  font-weight:900;
+}
+#square-billing-note{
+  border-color:rgba(246,200,95,.35);
+  background:rgba(246,200,95,.07);
+}
+
+#service-categories .feature-grid{grid-template-columns:repeat(5,1fr)}
+#service-categories .card{text-decoration:none;min-height:155px}
+#service-categories .card .icon{font-size:24px}
+@media(max-width:1050px){#service-categories .feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){#service-categories .feature-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -232,7 +439,7 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <a href="#pricing">For Business</a>
 <a href="https://instagram.com/rfd_flow.oc.la" rel="noopener" target="_blank">Instagram</a>
 <a class="primary" href="#pricing">Get Listed</a>
-</nav>
+<a href="#local-deals">Local Deals</a><a href="#rfd-pulse">RFD Pulse</a></nav>
 </div>
 </header>
 <main>
@@ -246,12 +453,32 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <a class="btn" href="#pricing">🏢 List your business</a>
 <a class="btn green" href="https://instagram.com/rfd_flow.oc.la" rel="noopener" target="_blank">📸 @rfd_flow.oc.la</a>
 </div>
+<div class="trust-row">
+<span class="trust-pill">✅ Real business listings</span>
+<span class="trust-pill">⭐ Verified-review policy</span>
+<span class="trust-pill">🛡️ Business dispute protection</span>
+<span class="trust-pill">🆓 Free listings available</span>
+<span class="trust-pill">🤖 Automatic RFD support</span>
+</div>
 <div class="statbar">
 <div class="stat"><strong>162+</strong><small>Cities represented across OC + LA + IE</small></div>
 <div class="stat"><strong>3</strong><small>Membership levels for businesses</small></div>
 <div class="stat"><strong>30 days</strong><small>Money-back guarantee on first paid membership</small></div>
 <div class="stat"><strong>Local-first</strong><small>Built around independent business discovery</small></div>
 </div>
+</div>
+</section>
+<section class="trending-wrap">
+<div class="wrap">
+<div class="trending">
+<span class="trending-label">TRENDING LOCAL</span>
+<a data-filter="restaurant" href="#discover">🍜 Restaurants</a>
+<a data-filter="boutique" href="#discover">👕 Boutiques</a>
+<a data-filter="dessert" href="#discover">🍨 Dessert</a>
+<a data-filter="mall shop" href="#discover">🏬 Mall Shops</a>
+<a data-filter="family business" href="#discover">🏪 Family-Owned</a>
+<a data-filter="hvac" href="#discover">🛠️ Home Services</a>
+<a data-filter="tattoo piercing" href="#discover">🖋️ Tattoo &amp; Piercing</a><a data-filter="massage bodywork" href="#discover">💆 Massage</a><a data-filter="spa wellness" href="#discover">🧖 Spas</a><a data-filter="barber" href="#discover">💈 Barbers</a></div>
 </div>
 </section>
 <section class="section">
@@ -263,8 +490,32 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <div class="card"><div class="icon">✅</div><h3>RFD Verified</h3><p>A verification status for businesses whose core listing information has been checked. Payment never automatically guarantees verification.</p></div>
 <div class="card"><div class="icon">⚡</div><h3>RFD LIVE</h3><p>Fresh updates for availability, specials, openings and announcements. Each update should show when it was posted.</p></div>
 <div class="card"><div class="icon">📊</div><h3>RFD Score</h3><p>A transparent score concept based on listing completeness, responsiveness and verified information rather than pay-to-win placement.</p></div>
-<div class="card"><div class="icon">🏆</div><h3>Business of the Month</h3><p>A rotating local spotlight open to Free, Basic and Pro Gold businesses. Selection is based on strong verified customer reviews, listing quality and local reputation, not payment.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Business of the Month</h3><p>Business of the Month begins once a listed business has earned its first verified RFD FLOW reviews. Until then, homepage spotlights are labeled Featured Local Spotlight.</p></div>
 <div class="card"><div class="icon">⭐</div><h3>Real Customer Reviews</h3><p>Customers can submit genuine feedback for listed businesses. Reviews are available on free listings too and should only be published after basic authenticity checks.</p></div></div>
+</div>
+</section>
+<section class="section" id="regions">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Explore by region</h2>
+<p>Jump into the three areas RFD FLOW is built around.</p>
+</div>
+</div>
+<div class="region-showcase">
+<a class="region-card" data-region-jump="OC" href="#discover">
+<div class="region-code">OC</div><strong>Orange County</strong>
+<small>Restaurants, shops, services, malls and neighborhood businesses across OC.</small>
+</a>
+<a class="region-card" data-region-jump="LA" href="#discover">
+<div class="region-code">LA</div><strong>Los Angeles</strong>
+<small>Independent businesses, food halls, boutiques and local finds throughout LA.</small>
+</a>
+<a class="region-card" data-region-jump="IE" href="#discover">
+<div class="region-code">IE</div><strong>Inland Empire</strong>
+<small>Local operators, shopping districts, restaurants and family-owned businesses.</small>
+</a>
+</div>
 </div>
 </section>
 <section class="section" id="small-shops">
@@ -335,43 +586,64 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <p class="notice">RFD FLOW can include Free listings for small businesses. Publish real business names, phone numbers, websites and reviews only after confirming them.</p>
 </div>
 </section>
+<section class="section" id="service-categories">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Personal care &amp; local services</h2>
+<p>Discover independent service businesses across OC, LA and the Inland Empire.</p>
+</div>
+</div>
+<div class="feature-grid">
+<a class="card" data-filter="tattoo piercing" href="#discover"><div class="icon">🖋️</div><h3>Tattoo &amp; Piercing</h3><p>Studios, artists, piercing shops and custom body art.</p></a>
+<a class="card" data-filter="massage bodywork" href="#discover"><div class="icon">💆</div><h3>Massage &amp; Bodywork</h3><p>Massage therapists, recovery studios and bodywork services.</p></a>
+<a class="card" data-filter="spa wellness" href="#discover"><div class="icon">🧖</div><h3>Spas &amp; Wellness</h3><p>Day spas, facials, wellness studios and relaxation services.</p></a>
+<a class="card" data-filter="barber" href="#discover"><div class="icon">💈</div><h3>Barbers</h3><p>Independent barbershops, cuts, fades and grooming.</p></a>
+<a class="card" data-filter="hair salon" href="#discover"><div class="icon">💇</div><h3>Hair Salons</h3><p>Stylists, color, blowouts and hair-care services.</p></a>
+<a class="card" data-filter="nail salon" href="#discover"><div class="icon">💅</div><h3>Nail Salons</h3><p>Manicures, pedicures, nail art and beauty services.</p></a>
+<a class="card" data-filter="gym fitness yoga pilates" href="#discover"><div class="icon">🏋️</div><h3>Gyms &amp; Fitness</h3><p>Gyms, trainers, yoga, pilates, boxing and specialty fitness.</p></a>
+<a class="card" data-filter="auto detail car wash tint wrap" href="#discover"><div class="icon">🚘</div><h3>Auto Detail &amp; Care</h3><p>Detailers, tint, wraps, ceramic coating and vehicle care.</p></a>
+<a class="card" data-filter="pet grooming" href="#discover"><div class="icon">🐾</div><h3>Pet Grooming</h3><p>Pet groomers, mobile grooming and pet spa services.</p></a>
+<a class="card" data-filter="recovery wellness stretch" href="#discover"><div class="icon">🧘</div><h3>Holistic &amp; Recovery</h3><p>Stretch, mobility, recovery and wellness services.</p></a>
+</div>
+</div>
+</section>
 <section class="section" id="discover">
 <div class="wrap">
 <div class="section-head">
 <div><h2>Discover local</h2><p>Search by business name or category and narrow by region.</p></div>
 </div>
+<div class="notice" id="new-real-service-listings" style="margin:12px 0 14px">
+<strong>New real Costa Mesa listings:</strong> tattoo &amp; piercing, massage/bodywork, barbers, hair salons,
+          gyms, pet grooming and auto detailing. Public details checked Nov. 4, 2026.
+        </div>
+
 <div class="search-panel">
-<input id="searchInput" placeholder="Try HVAC, barber, plumber, auto repair..." type="search"/>
+<input id="searchInput" placeholder="Search business, city, category, mall, food hall..." type="search"/>
 <select id="regionFilter">
 <option value="">All regions</option>
 <option value="OC">Orange County</option>
 <option value="LA">Los Angeles</option>
 <option value="IE">Inland Empire</option>
 </select>
-<select id="verifiedFilter">
-<option value="">Any status</option>
-<option value="verified">RFD Verified</option>
-</select>
 <button id="searchBtn">Search</button>
-</div>
+<button class="clear-search" id="clearSearchBtn" type="button">Clear</button></div><p class="search-help">Tip: search by business name, city, category, mall/food hall, or region. Partial words work.</p>
+<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="showFavoritesBtn" type="button">♥ Saved businesses <span id="favoriteCount">0</span></button></div>
+<div class="favorites-panel" id="favoritesPanel"><strong>Saved businesses</strong><div id="favoritesList" style="margin-top:8px"></div></div>
 </div>
 </section>
 <section class="section">
 <div class="wrap">
 <div class="featured">
 <div>
-<span class="badge gold">🏆 BUSINESS OF THE MONTH</span>
-<h2 style="font-size:34px;margin:14px 0 6px">Atara Mechanical HVAC</h2>
-<p style="color:#b7c1d0;margin:0 0 14px">Featured by RFD FLOW. This spotlight can be expanded with verified service areas, contact information, offers and RFD LIVE updates as the profile is completed.</p>
-<div style="display:flex;gap:7px;flex-wrap:wrap">
-<span class="badge verified">✅ RFD Verified eligibility</span>
-<span class="badge live">● RFD LIVE ready</span>
-<span class="badge">OC + LA + IE discovery</span>
-</div>
-<div class="botm-note">Business of the Month is open to Free, Basic and Pro Gold listings. Paid membership does not buy the award. Strong verified customer reviews and local reputation matter most.</div></div>
+<span class="badge gold">✨ FEATURED LOCAL SPOTLIGHT</span>
+<h2 style="font-size:34px;margin:14px 0 6px">Featured Local Spotlight</h2>
+<p style="color:#b7c1d0;margin:0 0 14px">Current status: Business of the Month has not started yet. The award begins after a business earns its first verified RFD FLOW reviews.</p>
+<div style="display:flex;gap:7px;flex-wrap:wrap"><span class="badge">🟡 Current status: no award winner yet</span><span class="badge">⭐ Verified reviews required</span><span class="badge">🏆 Free, Basic &amp; Pro Gold can qualify</span></div>
+<div class="botm-note">Business of the Month is earned, not purchased. Once verified RFD FLOW reviews exist, selection can consider review quality, consistency, listing quality, and local reputation.</div></div>
 <div class="score">
 <strong>RFD</strong>
-<span>Featured local spotlight</span>
+<span>Featured Local Spotlight</span>
 </div>
 </div>
 </div>
@@ -382,7 +654,748 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <div><h2>Directory</h2><p>Real businesses across OC, LA and the Inland Empire. Search, filter, tap any business card for Maps, or use Call, Directions and Website buttons.</p></div>
 <div id="resultCount" style="color:var(--muted);font-size:12px"></div>
 </div>
-<div class="biz-grid" id="bizGrid"><article aria-label="Open Atara Mechanical in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" data-region="IE" data-search="Atara Mechanical Rancho Cucamonga / Eastvale HVAC • Family-owned service business hvac family business small business contractor rancho cucamonga eastvale" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" rel="noopener" style="text-decoration:none" target="_blank">Atara Mechanical</a></h3><p>Rancho Cucamonga / Eastvale • HVAC • Family-owned service business</p><p style="margin-top:7px;color:#8491a2">10722 Arrow Rte Ste 704, Rancho Cucamonga, CA 91730</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19094711962">📞 909-471-1962</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://ataramechanical.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Atara%20Mechanical&amp;body=Business%3A%20Atara%20Mechanical%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Atara%20Mechanical">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Good Town Doughnuts in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Good Town Doughnuts Costa Mesa • The LAB Anti-Mall Doughnut shop • Small mall business dessert donuts doughnuts mall shop small business the lab costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Good Town Doughnuts</a></h3><p>Costa Mesa • The LAB Anti-Mall • Doughnut shop • Small mall business</p><p style="margin-top:7px;color:#8491a2">2930 Bristol St, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17144861870">📞 714-486-1870</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Good%20Town%20Doughnuts&amp;body=Business%3A%20Good%20Town%20Doughnuts%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Good%20Town%20Doughnuts">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Sun Dressed in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Sun Dressed Costa Mesa • The LAB Anti-Mall Independent clothing boutique clothing boutique mall shop small business fashion the lab costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Sun Dressed</a></h3><p>Costa Mesa • The LAB Anti-Mall • Independent clothing boutique</p><p style="margin-top:7px;color:#8491a2">2930 Bristol St Ste C102, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19494843664">📞 949-484-3664</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sun%20Dressed&amp;body=Business%3A%20Sun%20Dressed%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sun%20Dressed">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Folks Pizzeria in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Folks Pizzeria Costa Mesa • The CAMP Independent pizzeria • Restaurant small restaurant pizza pizzeria food plaza small business the camp costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Folks Pizzeria</a></h3><p>Costa Mesa • The CAMP • Independent pizzeria • Restaurant</p><p style="margin-top:7px;color:#8491a2">2937 Bristol St A102, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17146174888">📞 714-617-4888</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Folks%20Pizzeria&amp;body=Business%3A%20Folks%20Pizzeria%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Folks%20Pizzeria">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open The Kroft in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" data-region="OC" data-search="The Kroft Anaheim • Anaheim Packing House Comfort food • Food-hall restaurant small restaurant food court food hall mall shop anaheim packing house comfort food" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" rel="noopener" style="text-decoration:none" target="_blank">The Kroft</a></h3><p>Anaheim • Anaheim Packing House • Comfort food • Food-hall restaurant</p><p style="margin-top:7px;color:#8491a2">440 S Anaheim Blvd #109, Anaheim, CA 92805</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17146355900">📞 714-635-5900</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20Kroft&amp;body=Business%3A%20The%20Kroft%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20Kroft">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open ADYA in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" data-region="OC" data-search="ADYA Anaheim • Anaheim Packing House Indian restaurant • Food-hall business small restaurant indian food court food hall anaheim packing house small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" rel="noopener" style="text-decoration:none" target="_blank">ADYA</a></h3><p>Anaheim • Anaheim Packing House • Indian restaurant • Food-hall business</p><p style="margin-top:7px;color:#8491a2">440 S Anaheim Blvd Unit 201, Anaheim, CA 92805</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+17145332392">📞 714-533-2392</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20ADYA&amp;body=Business%3A%20ADYA%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20ADYA">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Arcade Vintage in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Arcade Vintage Los Angeles • ROW DTLA Vintage clothing boutique clothing boutique vintage mall shop row dtla los angeles small business fashion" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Arcade Vintage</a></h3><p>Los Angeles • ROW DTLA • Vintage clothing boutique</p><p style="margin-top:7px;color:#8491a2">777 S Alameda St Ste 174, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+12132845300">📞 213-284-5300</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://arcadeshops.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Arcade%20Vintage&amp;body=Business%3A%20Arcade%20Vintage%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Arcade%20Vintage">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Pikunico in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Pikunico Los Angeles • ROW DTLA Japanese fried chicken • Restaurant small restaurant japanese chicken food row dtla los angeles small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Pikunico</a></h3><p>Los Angeles • ROW DTLA • Japanese fried chicken • Restaurant</p><p style="margin-top:7px;color:#8491a2">767 S Alameda St Ste 122, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+12132780407">📞 213-278-0407</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Pikunico&amp;body=Business%3A%20Pikunico%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Pikunico">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Cafe Dulce in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Cafe Dulce Los Angeles • ROW DTLA Coffee shop • Bakery cafe coffee bakery dessert mall shop row dtla los angeles small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Cafe Dulce</a></h3><p>Los Angeles • ROW DTLA • Coffee shop • Bakery</p><p style="margin-top:7px;color:#8491a2">777 S Alameda St #150, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+12135369633">📞 213-536-9633</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Cafe%20Dulce&amp;body=Business%3A%20Cafe%20Dulce%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Cafe%20Dulce">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Baba's Hot Chicken in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" data-region="IE" data-search="Baba's Hot Chicken Riverside • Riverside Food Lab Hot chicken • Food-hall restaurant small restaurant chicken food court food hall riverside food lab inland empire" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" rel="noopener" style="text-decoration:none" target="_blank">Baba's Hot Chicken</a></h3><p>Riverside • Riverside Food Lab • Hot chicken • Food-hall restaurant</p><p style="margin-top:7px;color:#8491a2">3605 Market St #6, Riverside, CA 92501</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19514702799">📞 951-470-2799</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Baba%27s%20Hot%20Chicken&amp;body=Business%3A%20Baba%27s%20Hot%20Chicken%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Baba%27s%20Hot%20Chicken">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Sun Kissed Harmony in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" data-region="IE" data-search="Sun Kissed Harmony Rancho Cucamonga • Victoria Gardens Family-owned health &amp; beauty boutique beauty boutique mall shop family business victoria gardens rancho cucamonga inland empire jewelry" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" rel="noopener" style="text-decoration:none" target="_blank">Sun Kissed Harmony</a></h3><p>Rancho Cucamonga • Victoria Gardens • Family-owned health &amp; beauty boutique</p><p style="margin-top:7px;color:#8491a2">12410 S Mainstreet, Rancho Cucamonga, CA 91739</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19093674544">📞 909-367-4544</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sun%20Kissed%20Harmony&amp;body=Business%3A%20Sun%20Kissed%20Harmony%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sun%20Kissed%20Harmony">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Temecula Lavender Co. in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" data-region="IE" data-search="Temecula Lavender Co. Temecula • Old Town Lavender gifts • Bath, body &amp; home gift shop boutique bath body home old town temecula small business family business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">Temecula Lavender Co.</a></h3><p>Temecula • Old Town • Lavender gifts • Bath, body &amp; home</p><p style="margin-top:7px;color:#8491a2">28561 Old Town Front St, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19516761931">📞 951-676-1931</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://temeculalavenderco.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Temecula%20Lavender%20Co.&amp;body=Business%3A%20Temecula%20Lavender%20Co.%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Temecula%20Lavender%20Co.">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open The Collection Temecula in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" data-region="IE" data-search="The Collection Temecula Temecula • Old Town Mother-daughter owned consignment boutique clothing boutique consignment family business old town temecula small business fashion" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">The Collection Temecula</a></h3><p>Temecula • Old Town • Mother-daughter owned consignment boutique</p><p style="margin-top:7px;color:#8491a2">42030 Main St, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19519543280">📞 951-954-3280</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://www.thecollectiontemecula.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20Collection%20Temecula&amp;body=Business%3A%20The%20Collection%20Temecula%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20Collection%20Temecula">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article><article aria-label="Open Old Town Sweet Shop in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" data-region="IE" data-search="Old Town Sweet Shop Temecula • Old Town Candy &amp; confectionery shop dessert candy gift shop old town temecula small business sweets" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">Old Town Sweet Shop</a></h3><p>Temecula • Old Town • Candy &amp; confectionery shop</p><p style="margin-top:7px;color:#8491a2">28545 Old Town Front St #101, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="phone-row"><a class="btn" href="tel:+19516931919">📞 951-693-1919</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Old%20Town%20Sweet%20Shop&amp;body=Business%3A%20Old%20Town%20Sweet%20Shop%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Old%20Town%20Sweet%20Shop">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p></article></div>
+<div class="biz-grid" id="bizGrid"><article aria-label="Open Atara Mechanical in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" data-region="IE" data-search="Atara Mechanical Rancho Cucamonga / Eastvale HVAC • Family-owned service business hvac family business small business contractor rancho cucamonga eastvale" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" rel="noopener" style="text-decoration:none" target="_blank">Atara Mechanical</a></h3><p>Rancho Cucamonga / Eastvale • HVAC • Family-owned service business</p><p style="margin-top:7px;color:#8491a2">10722 Arrow Rte Ste 704, Rancho Cucamonga, CA 91730</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19094711962">📞 909-471-1962</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Atara+Mechanical+10722+Arrow+Rte+Ste+704%2C+Rancho+Cucamonga%2C+CA+91730" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://ataramechanical.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Atara%20Mechanical&amp;body=Business%3A%20Atara%20Mechanical%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Atara%20Mechanical">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Atara Mechanical" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Atara%20Mechanical">✏️ Report incorrect info</a></div></article><article aria-label="Open Good Town Doughnuts in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Good Town Doughnuts Costa Mesa • The LAB Anti-Mall Doughnut shop • Small mall business dessert donuts doughnuts mall shop small business the lab costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Good Town Doughnuts</a></h3><p>Costa Mesa • The LAB Anti-Mall • Doughnut shop • Small mall business</p><p style="margin-top:7px;color:#8491a2">2930 Bristol St, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+17144861870">📞 714-486-1870</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Good+Town+Doughnuts+2930+Bristol+St%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Good%20Town%20Doughnuts&amp;body=Business%3A%20Good%20Town%20Doughnuts%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Good%20Town%20Doughnuts">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Good Town Doughnuts" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Good%20Town%20Doughnuts">✏️ Report incorrect info</a></div></article><article aria-label="Open Sun Dressed in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Sun Dressed Costa Mesa • The LAB Anti-Mall Independent clothing boutique clothing boutique mall shop small business fashion the lab costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Sun Dressed</a></h3><p>Costa Mesa • The LAB Anti-Mall • Independent clothing boutique</p><p style="margin-top:7px;color:#8491a2">2930 Bristol St Ste C102, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19494843664">📞 949-484-3664</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Dressed+2930+Bristol+St+Ste+C102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sun%20Dressed&amp;body=Business%3A%20Sun%20Dressed%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sun%20Dressed">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Sun Dressed" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Sun%20Dressed">✏️ Report incorrect info</a></div></article><article aria-label="Open Folks Pizzeria in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="Folks Pizzeria Costa Mesa • The CAMP Independent pizzeria • Restaurant small restaurant pizza pizzeria food plaza small business the camp costa mesa" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Folks Pizzeria</a></h3><p>Costa Mesa • The CAMP • Independent pizzeria • Restaurant</p><p style="margin-top:7px;color:#8491a2">2937 Bristol St A102, Costa Mesa, CA 92626</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+17146174888">📞 714-617-4888</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Folks+Pizzeria+2937+Bristol+St+A102%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Folks%20Pizzeria&amp;body=Business%3A%20Folks%20Pizzeria%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Folks%20Pizzeria">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Folks Pizzeria" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Folks%20Pizzeria">✏️ Report incorrect info</a></div></article><article aria-label="Open The Kroft in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" data-region="OC" data-search="The Kroft Anaheim • Anaheim Packing House Comfort food • Food-hall restaurant small restaurant food court food hall mall shop anaheim packing house comfort food" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" rel="noopener" style="text-decoration:none" target="_blank">The Kroft</a></h3><p>Anaheim • Anaheim Packing House • Comfort food • Food-hall restaurant</p><p style="margin-top:7px;color:#8491a2">440 S Anaheim Blvd #109, Anaheim, CA 92805</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+17146355900">📞 714-635-5900</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Kroft+440+S+Anaheim+Blvd+%23109%2C+Anaheim%2C+CA+92805" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20Kroft&amp;body=Business%3A%20The%20Kroft%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20Kroft">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="The Kroft" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20The%20Kroft">✏️ Report incorrect info</a></div></article><article aria-label="Open ADYA in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" data-region="OC" data-search="ADYA Anaheim • Anaheim Packing House Indian restaurant • Food-hall business small restaurant indian food court food hall anaheim packing house small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" rel="noopener" style="text-decoration:none" target="_blank">ADYA</a></h3><p>Anaheim • Anaheim Packing House • Indian restaurant • Food-hall business</p><p style="margin-top:7px;color:#8491a2">440 S Anaheim Blvd Unit 201, Anaheim, CA 92805</p><div class="meta"><span class="badge">Orange County</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+17145332392">📞 714-533-2392</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=ADYA+440+S+Anaheim+Blvd+Unit+201%2C+Anaheim%2C+CA+92805" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20ADYA&amp;body=Business%3A%20ADYA%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20ADYA">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="ADYA" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20ADYA">✏️ Report incorrect info</a></div></article><article aria-label="Open Arcade Vintage in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Arcade Vintage Los Angeles • ROW DTLA Vintage clothing boutique clothing boutique vintage mall shop row dtla los angeles small business fashion" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Arcade Vintage</a></h3><p>Los Angeles • ROW DTLA • Vintage clothing boutique</p><p style="margin-top:7px;color:#8491a2">777 S Alameda St Ste 174, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+12132845300">📞 213-284-5300</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Arcade+Vintage+777+S+Alameda+St+Ste+174%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://arcadeshops.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Arcade%20Vintage&amp;body=Business%3A%20Arcade%20Vintage%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Arcade%20Vintage">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Arcade Vintage" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Arcade%20Vintage">✏️ Report incorrect info</a></div></article><article aria-label="Open Pikunico in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Pikunico Los Angeles • ROW DTLA Japanese fried chicken • Restaurant small restaurant japanese chicken food row dtla los angeles small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Pikunico</a></h3><p>Los Angeles • ROW DTLA • Japanese fried chicken • Restaurant</p><p style="margin-top:7px;color:#8491a2">767 S Alameda St Ste 122, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+12132780407">📞 213-278-0407</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Pikunico+767+S+Alameda+St+Ste+122%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Pikunico&amp;body=Business%3A%20Pikunico%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Pikunico">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Pikunico" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Pikunico">✏️ Report incorrect info</a></div></article><article aria-label="Open Cafe Dulce in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" data-region="LA" data-search="Cafe Dulce Los Angeles • ROW DTLA Coffee shop • Bakery cafe coffee bakery dessert mall shop row dtla los angeles small business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" rel="noopener" style="text-decoration:none" target="_blank">Cafe Dulce</a></h3><p>Los Angeles • ROW DTLA • Coffee shop • Bakery</p><p style="margin-top:7px;color:#8491a2">777 S Alameda St #150, Los Angeles, CA 90021</p><div class="meta"><span class="badge">Los Angeles</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+12135369633">📞 213-536-9633</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Dulce+777+S+Alameda+St+%23150%2C+Los+Angeles%2C+CA+90021" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Cafe%20Dulce&amp;body=Business%3A%20Cafe%20Dulce%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Cafe%20Dulce">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Cafe Dulce" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Cafe%20Dulce">✏️ Report incorrect info</a></div></article><article aria-label="Open Baba's Hot Chicken in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" data-region="IE" data-search="Baba's Hot Chicken Riverside • Riverside Food Lab Hot chicken • Food-hall restaurant small restaurant chicken food court food hall riverside food lab inland empire" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" rel="noopener" style="text-decoration:none" target="_blank">Baba's Hot Chicken</a></h3><p>Riverside • Riverside Food Lab • Hot chicken • Food-hall restaurant</p><p style="margin-top:7px;color:#8491a2">3605 Market St #6, Riverside, CA 92501</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19514702799">📞 951-470-2799</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Baba%27s+Hot+Chicken+3605+Market+St+%236%2C+Riverside%2C+CA+92501" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Baba%27s%20Hot%20Chicken&amp;body=Business%3A%20Baba%27s%20Hot%20Chicken%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Baba%27s%20Hot%20Chicken">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Baba's Hot Chicken" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Baba's%20Hot%20Chicken">✏️ Report incorrect info</a></div></article><article aria-label="Open Sun Kissed Harmony in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" data-region="IE" data-search="Sun Kissed Harmony Rancho Cucamonga • Victoria Gardens Family-owned health &amp; beauty boutique beauty boutique mall shop family business victoria gardens rancho cucamonga inland empire jewelry" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" rel="noopener" style="text-decoration:none" target="_blank">Sun Kissed Harmony</a></h3><p>Rancho Cucamonga • Victoria Gardens • Family-owned health &amp; beauty boutique</p><p style="margin-top:7px;color:#8491a2">12410 S Mainstreet, Rancho Cucamonga, CA 91739</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19093674544">📞 909-367-4544</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sun+Kissed+Harmony+12410+S+Mainstreet%2C+Rancho+Cucamonga%2C+CA+91739" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sun%20Kissed%20Harmony&amp;body=Business%3A%20Sun%20Kissed%20Harmony%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sun%20Kissed%20Harmony">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Sun Kissed Harmony" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Sun%20Kissed%20Harmony">✏️ Report incorrect info</a></div></article><article aria-label="Open Temecula Lavender Co. in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" data-region="IE" data-search="Temecula Lavender Co. Temecula • Old Town Lavender gifts • Bath, body &amp; home gift shop boutique bath body home old town temecula small business family business" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">Temecula Lavender Co.</a></h3><p>Temecula • Old Town • Lavender gifts • Bath, body &amp; home</p><p style="margin-top:7px;color:#8491a2">28561 Old Town Front St, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19516761931">📞 951-676-1931</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Temecula+Lavender+Co.+28561+Old+Town+Front+St%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://temeculalavenderco.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Temecula%20Lavender%20Co.&amp;body=Business%3A%20Temecula%20Lavender%20Co.%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Temecula%20Lavender%20Co.">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Temecula Lavender Co." type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Temecula%20Lavender%20Co.">✏️ Report incorrect info</a></div></article><article aria-label="Open The Collection Temecula in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" data-region="IE" data-search="The Collection Temecula Temecula • Old Town Mother-daughter owned consignment boutique clothing boutique consignment family business old town temecula small business fashion" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">The Collection Temecula</a></h3><p>Temecula • Old Town • Mother-daughter owned consignment boutique</p><p style="margin-top:7px;color:#8491a2">42030 Main St, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19519543280">📞 951-954-3280</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Collection+Temecula+42030+Main+St%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a><a class="btn" href="https://www.thecollectiontemecula.com/" rel="noopener" target="_blank">🌐 Website</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20Collection%20Temecula&amp;body=Business%3A%20The%20Collection%20Temecula%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20Collection%20Temecula">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="The Collection Temecula" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20The%20Collection%20Temecula">✏️ Report incorrect info</a></div></article><article aria-label="Open Old Town Sweet Shop in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" data-region="IE" data-search="Old Town Sweet Shop Temecula • Old Town Candy &amp; confectionery shop dessert candy gift shop old town temecula small business sweets" data-verified="" role="link" style="cursor:pointer" tabindex="0"><span class="badge">Real business • Public listing</span><h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" rel="noopener" style="text-decoration:none" target="_blank">Old Town Sweet Shop</a></h3><p>Temecula • Old Town • Candy &amp; confectionery shop</p><p style="margin-top:7px;color:#8491a2">28545 Old Town Front St #101, Temecula, CA 92590</p><div class="meta"><span class="badge">Inland Empire</span><span class="badge">Free listing eligible</span></div><div class="profile-tags"><span class="profile-tag">Public listing</span><span class="profile-tag">Directions</span><span class="profile-tag">Reviews</span></div><div class="phone-row"><a class="btn" href="tel:+19516931919">📞 951-693-1919</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Sweet+Shop+28545+Old+Town+Front+St+%23101%2C+Temecula%2C+CA+92590" rel="noopener" target="_blank">📍 Directions</a></div><div class="review-box"><div class="review-summary"><div><strong>RFD customer reviews</strong><br/><span class="stars">☆☆☆☆☆</span></div><small>No verified RFD reviews yet</small></div><div class="review-actions"><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Old%20Town%20Sweet%20Shop&amp;body=Business%3A%20Old%20Town%20Sweet%20Shop%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28order%20number%2C%20appointment%20confirmation%2C%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Old%20Town%20Sweet%20Shop">🛡️ Business dispute</a></div></div><p class="notice" style="margin-top:10px">Public business details checked Nov. 3, 2026. Not yet RFD Verified.</p><div class="biz-actions"><button class="btn save-btn" data-save-business="Old Town Sweet Shop" type="button">♡ Save</button><a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Old%20Town%20Sweet%20Shop">✏️ Report incorrect info</a></div></article>
+<article aria-label="Open Port City Tattoo in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Port+City+Tattoo+1145+Baker+St+Ste+A%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="port city tattoo costa mesa orange county tattoo &amp; piercing custom tattoo studio • walk-ins + appointments" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Port+City+Tattoo+1145+Baker+St+Ste+A%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Port City Tattoo</a></h3>
+<p>Costa Mesa • Tattoo &amp; Piercing • Custom tattoo studio • Walk-ins + appointments</p>
+<p style="margin-top:7px;color:#8491a2">1145 Baker St Ste A, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17147082120">📞 714-708-2120</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Port+City+Tattoo+1145+Baker+St+Ste+A%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Port+City+Tattoo+1145+Baker+St+Ste+A%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Port%20City%20Tattoo&amp;body=Business%3A%20Port%20City%20Tattoo%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Port%20City%20Tattoo">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Port City Tattoo" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Port%20City%20Tattoo">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Cleopatra INK Tattoo &amp; Piercing in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Cleopatra+INK+Tattoo+%26+Piercing+1834+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="cleopatra ink tattoo &amp; piercing costa mesa orange county tattoo &amp; piercing tattoo + body piercing studio" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Cleopatra+INK+Tattoo+%26+Piercing+1834+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Cleopatra INK Tattoo &amp; Piercing</a></h3>
+<p>Costa Mesa • Tattoo &amp; Piercing • Tattoo + body piercing studio</p>
+<p style="margin-top:7px;color:#8491a2">1834 Newport Blvd, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19493355143">📞 949-335-5143</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cleopatra+INK+Tattoo+%26+Piercing+1834+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cleopatra+INK+Tattoo+%26+Piercing+1834+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Cleopatra%20INK%20Tattoo%20%26%20Piercing&amp;body=Business%3A%20Cleopatra%20INK%20Tattoo%20%26%20Piercing%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Cleopatra%20INK%20Tattoo%20%26%20Piercing">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Cleopatra INK Tattoo &amp; Piercing" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Cleopatra%20INK%20Tattoo%20%26%20Piercing">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Blue Collar Tattoo in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Blue+Collar+Tattoo+2204+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="blue collar tattoo costa mesa orange county tattoo &amp; piercing tattoo + piercing studio • established local shop" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Collar+Tattoo+2204+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Blue Collar Tattoo</a></h3>
+<p>Costa Mesa • Tattoo &amp; Piercing • Tattoo + piercing studio • Established local shop</p>
+<p style="margin-top:7px;color:#8491a2">2204 Newport Blvd, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19496319200">📞 949-631-9200</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Collar+Tattoo+2204+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Collar+Tattoo+2204+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Blue%20Collar%20Tattoo&amp;body=Business%3A%20Blue%20Collar%20Tattoo%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Blue%20Collar%20Tattoo">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Blue Collar Tattoo" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Blue%20Collar%20Tattoo">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Superior Ink Tattoo and Piercing - OC in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Superior+Ink+Tattoo+and+Piercing+-+OC+2750+Harbor+Blvd+Unit+A2%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="superior ink tattoo and piercing - oc costa mesa orange county tattoo &amp; piercing tattoo + body piercing studio" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Superior+Ink+Tattoo+and+Piercing+-+OC+2750+Harbor+Blvd+Unit+A2%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Superior Ink Tattoo and Piercing - OC</a></h3>
+<p>Costa Mesa • Tattoo &amp; Piercing • Tattoo + body piercing studio</p>
+<p style="margin-top:7px;color:#8491a2">2750 Harbor Blvd Unit A2, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17148152110">📞 714-815-2110</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Superior+Ink+Tattoo+and+Piercing+-+OC+2750+Harbor+Blvd+Unit+A2%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Superior+Ink+Tattoo+and+Piercing+-+OC+2750+Harbor+Blvd+Unit+A2%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Superior%20Ink%20Tattoo%20and%20Piercing%20-%20OC&amp;body=Business%3A%20Superior%20Ink%20Tattoo%20and%20Piercing%20-%20OC%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Superior%20Ink%20Tattoo%20and%20Piercing%20-%20OC">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Superior Ink Tattoo and Piercing - OC" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Superior%20Ink%20Tattoo%20and%20Piercing%20-%20OC">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Revive Massage &amp; Bodywork in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Revive+Massage+%26+Bodywork+129+W+Wilson+St+Ste+201%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="revive massage &amp; bodywork costa mesa orange county massage &amp; bodywork therapeutic massage • deep tissue • bodywork" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Revive+Massage+%26+Bodywork+129+W+Wilson+St+Ste+201%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Revive Massage &amp; Bodywork</a></h3>
+<p>Costa Mesa • Massage &amp; Bodywork • Therapeutic massage • Deep tissue • Bodywork</p>
+<p style="margin-top:7px;color:#8491a2">129 W Wilson St Ste 201, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17149802086">📞 714-980-2086</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Revive+Massage+%26+Bodywork+129+W+Wilson+St+Ste+201%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Revive+Massage+%26+Bodywork+129+W+Wilson+St+Ste+201%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Revive%20Massage%20%26%20Bodywork&amp;body=Business%3A%20Revive%20Massage%20%26%20Bodywork%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Revive%20Massage%20%26%20Bodywork">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Revive Massage &amp; Bodywork" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Revive%20Massage%20%26%20Bodywork">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Elements Massage in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Elements+Massage+2701+Harbor+Blvd+%23E3%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="elements massage costa mesa orange county massage &amp; bodywork massage spa • customized therapeutic sessions" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Elements+Massage+2701+Harbor+Blvd+%23E3%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Elements Massage</a></h3>
+<p>Costa Mesa • Massage &amp; Bodywork • Massage spa • Customized therapeutic sessions</p>
+<p style="margin-top:7px;color:#8491a2">2701 Harbor Blvd #E3, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17148500500">📞 714-850-0500</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Elements+Massage+2701+Harbor+Blvd+%23E3%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Elements+Massage+2701+Harbor+Blvd+%23E3%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Elements%20Massage&amp;body=Business%3A%20Elements%20Massage%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Elements%20Massage">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Elements Massage" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Elements%20Massage">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Dynamic Touch Massage in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Dynamic+Touch+Massage+2651+Irvine+Ave+Ste+122%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="dynamic touch massage costa mesa orange county massage &amp; bodywork therapeutic bodywork • sports + deep tissue" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Dynamic+Touch+Massage+2651+Irvine+Ave+Ste+122%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Dynamic Touch Massage</a></h3>
+<p>Costa Mesa • Massage &amp; Bodywork • Therapeutic bodywork • Sports + deep tissue</p>
+<p style="margin-top:7px;color:#8491a2">2651 Irvine Ave Ste 122, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19496504240">📞 949-650-4240</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Dynamic+Touch+Massage+2651+Irvine+Ave+Ste+122%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Dynamic+Touch+Massage+2651+Irvine+Ave+Ste+122%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Dynamic%20Touch%20Massage&amp;body=Business%3A%20Dynamic%20Touch%20Massage%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Dynamic%20Touch%20Massage">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Dynamic Touch Massage" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Dynamic%20Touch%20Massage">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Be Well Massage Therapy in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Be+Well+Massage+Therapy+1870+Harbor+Blvd+2nd+Floor%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="be well massage therapy costa mesa orange county massage &amp; bodywork by-appointment massage therapy • recovery + relaxation" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Be+Well+Massage+Therapy+1870+Harbor+Blvd+2nd+Floor%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Be Well Massage Therapy</a></h3>
+<p>Costa Mesa • Massage &amp; Bodywork • By-appointment massage therapy • Recovery + relaxation</p>
+<p style="margin-top:7px;color:#8491a2">1870 Harbor Blvd 2nd Floor, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17149065694">📞 714-906-5694</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Be+Well+Massage+Therapy+1870+Harbor+Blvd+2nd+Floor%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Be+Well+Massage+Therapy+1870+Harbor+Blvd+2nd+Floor%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Be%20Well%20Massage%20Therapy&amp;body=Business%3A%20Be%20Well%20Massage%20Therapy%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Be%20Well%20Massage%20Therapy">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Be Well Massage Therapy" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Be%20Well%20Massage%20Therapy">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Truly Blessed Barbershop #2 in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Truly+Blessed+Barbershop+%232+3143+Airway+Ave+Suite+C1%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="truly blessed barbershop #2 costa mesa orange county barbers barbershop • fades • lineups • men's grooming" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Truly+Blessed+Barbershop+%232+3143+Airway+Ave+Suite+C1%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Truly Blessed Barbershop #2</a></h3>
+<p>Costa Mesa • Barbers • Barbershop • Fades • Lineups • Men's grooming</p>
+<p style="margin-top:7px;color:#8491a2">3143 Airway Ave Suite C1, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+16577665023">📞 657-766-5023</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Truly+Blessed+Barbershop+%232+3143+Airway+Ave+Suite+C1%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Truly+Blessed+Barbershop+%232+3143+Airway+Ave+Suite+C1%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Truly%20Blessed%20Barbershop%20%232&amp;body=Business%3A%20Truly%20Blessed%20Barbershop%20%232%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Truly%20Blessed%20Barbershop%20%232">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Truly Blessed Barbershop #2" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Truly%20Blessed%20Barbershop%20%232">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Ra'pôr Salon and Barber in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Ra%27p%C3%B4r+Salon+and+Barber+1780+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="ra'pôr salon and barber costa mesa orange county barbers / hair salons hair salon + dedicated barber services" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Ra%27p%C3%B4r+Salon+and+Barber+1780+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Ra'pôr Salon and Barber</a></h3>
+<p>Costa Mesa • Barbers / Hair Salons • Hair salon + dedicated barber services</p>
+<p style="margin-top:7px;color:#8491a2">1780 Newport Blvd, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19492876819">📞 949-287-6819</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ra%27p%C3%B4r+Salon+and+Barber+1780+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ra%27p%C3%B4r+Salon+and+Barber+1780+Newport+Blvd%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Ra%27p%C3%B4r%20Salon%20and%20Barber&amp;body=Business%3A%20Ra%27p%C3%B4r%20Salon%20and%20Barber%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Ra%27p%C3%B4r%20Salon%20and%20Barber">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Ra'pôr Salon and Barber" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Ra%27p%C3%B4r%20Salon%20and%20Barber">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Ultima Studio in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Ultima+Studio+1175+Baker+St+Ste+E19%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="ultima studio costa mesa orange county barbers men's grooming studio • precision cuts" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Ultima+Studio+1175+Baker+St+Ste+E19%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Ultima Studio</a></h3>
+<p>Costa Mesa • Barbers • Men's grooming studio • Precision cuts</p>
+<p style="margin-top:7px;color:#8491a2">1175 Baker St Ste E19, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19498758877">📞 949-875-8877</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ultima+Studio+1175+Baker+St+Ste+E19%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ultima+Studio+1175+Baker+St+Ste+E19%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Ultima%20Studio&amp;body=Business%3A%20Ultima%20Studio%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Ultima%20Studio">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Ultima Studio" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Ultima%20Studio">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open The David Salon in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=The+David+Salon+355+Bristol+St+D%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="the david salon costa mesa orange county hair salons full-service hair + beauty salon" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=The+David+Salon+355+Bristol+St+D%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">The David Salon</a></h3>
+<p>Costa Mesa • Hair Salons • Full-service hair + beauty salon</p>
+<p style="margin-top:7px;color:#8491a2">355 Bristol St D, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17145491160">📞 714-549-1160</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+David+Salon+355+Bristol+St+D%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+David+Salon+355+Bristol+St+D%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20The%20David%20Salon&amp;body=Business%3A%20The%20David%20Salon%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20The%20David%20Salon">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="The David Salon" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20The%20David%20Salon">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Vanilla Salon in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Vanilla+Salon+1500+Adams+Ave+Ste+105%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="vanilla salon costa mesa orange county hair salons hair color • blonding • cuts • grooming" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Vanilla+Salon+1500+Adams+Ave+Ste+105%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Vanilla Salon</a></h3>
+<p>Costa Mesa • Hair Salons • Hair color • Blonding • Cuts • Grooming</p>
+<p style="margin-top:7px;color:#8491a2">1500 Adams Ave Ste 105, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17148553858">📞 714-855-3858</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Vanilla+Salon+1500+Adams+Ave+Ste+105%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Vanilla+Salon+1500+Adams+Ave+Ste+105%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Vanilla%20Salon&amp;body=Business%3A%20Vanilla%20Salon%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Vanilla%20Salon">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Vanilla Salon" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Vanilla%20Salon">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open AIM Fitness in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=AIM+Fitness+1175+Baker+St+Ste+A5%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="aim fitness costa mesa orange county gyms &amp; fitness coach-led strength + conditioning gym" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=AIM+Fitness+1175+Baker+St+Ste+A5%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">AIM Fitness</a></h3>
+<p>Costa Mesa • Gyms &amp; Fitness • Coach-led strength + conditioning gym</p>
+<p style="margin-top:7px;color:#8491a2">1175 Baker St Ste A5, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19097623570">📞 909-762-3570</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=AIM+Fitness+1175+Baker+St+Ste+A5%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=AIM+Fitness+1175+Baker+St+Ste+A5%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20AIM%20Fitness&amp;body=Business%3A%20AIM%20Fitness%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20AIM%20Fitness">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="AIM Fitness" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20AIM%20Fitness">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Curl Fitness Costa Mesa in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Curl+Fitness+Costa+Mesa+1600+Adams+Ave%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="curl fitness costa mesa costa mesa orange county gyms &amp; fitness full-service gym • strength • cardio • group fitness" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Curl+Fitness+Costa+Mesa+1600+Adams+Ave%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Curl Fitness Costa Mesa</a></h3>
+<p>Costa Mesa • Gyms &amp; Fitness • Full-service gym • Strength • Cardio • Group fitness</p>
+<p style="margin-top:7px;color:#8491a2">1600 Adams Ave, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17147827000">📞 714-782-7000</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Curl+Fitness+Costa+Mesa+1600+Adams+Ave%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Curl+Fitness+Costa+Mesa+1600+Adams+Ave%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Curl%20Fitness%20Costa%20Mesa&amp;body=Business%3A%20Curl%20Fitness%20Costa%20Mesa%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Curl%20Fitness%20Costa%20Mesa">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Curl Fitness Costa Mesa" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Curl%20Fitness%20Costa%20Mesa">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Sandy Tails Pet Spa in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Sandy+Tails+Pet+Spa+2052+Newport+Blvd+%237%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="sandy tails pet spa costa mesa orange county pet grooming appointment-focused dog grooming + pet spa" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Sandy+Tails+Pet+Spa+2052+Newport+Blvd+%237%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">Sandy Tails Pet Spa</a></h3>
+<p>Costa Mesa • Pet Grooming • Appointment-focused dog grooming + pet spa</p>
+<p style="margin-top:7px;color:#8491a2">2052 Newport Blvd #7, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19496457387">📞 949-645-7387</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sandy+Tails+Pet+Spa+2052+Newport+Blvd+%237%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sandy+Tails+Pet+Spa+2052+Newport+Blvd+%237%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Sandy%20Tails%20Pet%20Spa&amp;body=Business%3A%20Sandy%20Tails%20Pet%20Spa%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Sandy%20Tails%20Pet%20Spa">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Sandy Tails Pet Spa" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Sandy%20Tails%20Pet%20Spa">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open PJ Noah PetSalon in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=PJ+Noah+PetSalon+333+E+17th+St%2C+Costa+Mesa%2C+CA+92627" data-region="OC" data-search="pj noah petsalon costa mesa orange county pet grooming local pet salon + grooming services" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=PJ+Noah+PetSalon+333+E+17th+St%2C+Costa+Mesa%2C+CA+92627" rel="noopener" style="text-decoration:none" target="_blank">PJ Noah PetSalon</a></h3>
+<p>Costa Mesa • Pet Grooming • Local pet salon + grooming services</p>
+<p style="margin-top:7px;color:#8491a2">333 E 17th St, Costa Mesa, CA 92627</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+19496783151">📞 949-678-3151</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=PJ+Noah+PetSalon+333+E+17th+St%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=PJ+Noah+PetSalon+333+E+17th+St%2C+Costa+Mesa%2C+CA+92627" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20PJ%20Noah%20PetSalon&amp;body=Business%3A%20PJ%20Noah%20PetSalon%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20PJ%20Noah%20PetSalon">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="PJ Noah PetSalon" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20PJ%20Noah%20PetSalon">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Platinum Plus Detailing | Ceramic Pro Costa Mesa in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Platinum+Plus+Detailing+%7C+Ceramic+Pro+Costa+Mesa+3030+Red+Hill+Ave%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="platinum plus detailing | ceramic pro costa mesa costa mesa orange county auto detail &amp; care detailing • paint correction • ceramic coating • tint" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Platinum+Plus+Detailing+%7C+Ceramic+Pro+Costa+Mesa+3030+Red+Hill+Ave%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Platinum Plus Detailing | Ceramic Pro Costa Mesa</a></h3>
+<p>Costa Mesa • Auto Detail &amp; Care • Detailing • Paint correction • Ceramic coating • Tint</p>
+<p style="margin-top:7px;color:#8491a2">3030 Red Hill Ave, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17146141691">📞 714-614-1691</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Platinum+Plus+Detailing+%7C+Ceramic+Pro+Costa+Mesa+3030+Red+Hill+Ave%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Platinum+Plus+Detailing+%7C+Ceramic+Pro+Costa+Mesa+3030+Red+Hill+Ave%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Platinum%20Plus%20Detailing%20%7C%20Ceramic%20Pro%20Costa%20Mesa&amp;body=Business%3A%20Platinum%20Plus%20Detailing%20%7C%20Ceramic%20Pro%20Costa%20Mesa%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Platinum%20Plus%20Detailing%20%7C%20Ceramic%20Pro%20Costa%20Mesa">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Platinum Plus Detailing | Ceramic Pro Costa Mesa" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Platinum%20Plus%20Detailing%20%7C%20Ceramic%20Pro%20Costa%20Mesa">✏️ Report incorrect info</a>
+</div>
+</article>
+
+<article aria-label="Open Unique Hand Wash and Auto Detailing in Maps" class="biz" data-map-url="https://www.google.com/maps/search/?api=1&amp;query=Unique+Hand+Wash+and+Auto+Detailing+959+S+Coast+Dr%2C+Costa+Mesa%2C+CA+92626" data-region="OC" data-search="unique hand wash and auto detailing costa mesa orange county auto detail &amp; care hand car wash + interior/exterior detailing" data-verified="" role="link" style="cursor:pointer" tabindex="0">
+<span class="badge">Real business • Public listing</span>
+<h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Unique+Hand+Wash+and+Auto+Detailing+959+S+Coast+Dr%2C+Costa+Mesa%2C+CA+92626" rel="noopener" style="text-decoration:none" target="_blank">Unique Hand Wash and Auto Detailing</a></h3>
+<p>Costa Mesa • Auto Detail &amp; Care • Hand car wash + interior/exterior detailing</p>
+<p style="margin-top:7px;color:#8491a2">959 S Coast Dr, Costa Mesa, CA 92626</p>
+<div class="meta">
+<span class="badge">Orange County</span>
+<span class="badge">Free listing eligible</span>
+</div>
+<div class="profile-tags">
+<span class="profile-tag">Public listing</span>
+<span class="profile-tag">Directions</span>
+<span class="profile-tag">Public reviews</span>
+</div>
+<div class="phone-row">
+<a class="btn" href="tel:+17145807146">📞 714-580-7146</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Unique+Hand+Wash+and+Auto+Detailing+959+S+Coast+Dr%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">📍 Directions</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Unique+Hand+Wash+and+Auto+Detailing+959+S+Coast+Dr%2C+Costa+Mesa%2C+CA+92626" rel="noopener" target="_blank">⭐ Public reviews</a>
+</div>
+<div class="review-box">
+<div class="review-summary">
+<div>
+<strong>RFD customer reviews</strong><br/>
+<span class="stars">☆☆☆☆☆</span>
+</div>
+<small>No verified RFD reviews yet</small>
+</div>
+<div class="review-actions">
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20verified%20review%20request%20-%20Unique%20Hand%20Wash%20and%20Auto%20Detailing&amp;body=Business%3A%20Unique%20Hand%20Wash%20and%20Auto%20Detailing%0ARating%20%281-5%29%3A%20%0AReview%3A%20%0AYour%20name%3A%20%0AApproximate%20visit/order%20date%3A%20%0AVerification%20proof%20%28appointment%20confirmation%20or%20redacted%20receipt%29%3A%20%0A%0ADo%20not%20send%20full%20card%20numbers%2C%20passwords%2C%20bank%20credentials%2C%20SSNs%2C%20or%20other%20sensitive%20information.%0ARFD%20FLOW%20publishes%20reviews%20only%20after%20reasonable%20customer%20verification.">⭐ Submit verified review</a>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20review%20dispute%20-%20Unique%20Hand%20Wash%20and%20Auto%20Detailing">🛡️ Business dispute</a>
+</div>
+</div>
+<p class="notice" style="margin-top:10px">Public business details checked Nov. 4, 2026. Not yet RFD Verified.</p>
+<div class="biz-actions">
+<button class="btn save-btn" data-save-business="Unique Hand Wash and Auto Detailing" type="button">♡ Save</button>
+<a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20correction%20-%20Unique%20Hand%20Wash%20and%20Auto%20Detailing">✏️ Report incorrect info</a>
+</div>
+</article>
+</div><div class="no-results hidden" id="noResults">No matches yet. Try fewer words, clear the region filter, or search by city/category.</div>
 <p class="notice">RFD FLOW listings use publicly available business information. Details can change, so businesses can report corrections. RFD Verified remains separate and is only awarded after RFD completes its own verification.</p>
 </div>
 </section>
@@ -452,34 +1465,174 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <p class="notice">For verification, ask only for limited proof such as an order number, appointment confirmation or redacted receipt. Never request full card numbers, bank credentials, passwords, Social Security numbers or other unnecessary sensitive information.</p>
 </div>
 </section>
-<section class="section" id="pricing">
+<section class="section" id="free-value">
 <div class="wrap">
 <div class="section-head">
-<div><h2>Plans for local businesses</h2><p>Start free, then upgrade when the extra visibility and tools are worth it.</p></div>
+<div>
+<h2>Free should still feel useful</h2>
+<p>RFD FLOW’s free plan is designed to help real local businesses get discovered without forcing them to pay first.</p>
+</div>
+</div>
+<div class="feature-grid">
+<div class="card"><div class="icon">📍</div><h3>Real local discovery</h3><p>Show up by business name, city, region and category with a clickable location and directions link.</p></div>
+<div class="card"><div class="icon">📞</div><h3>Customer action buttons</h3><p>Let customers call, visit the website, open directions and reach the business without paying for a listing.</p></div>
+<div class="card"><div class="icon">⭐</div><h3>Verified-review access</h3><p>Free businesses can receive verified RFD reviews, reply to them and qualify for trust-based awards.</p></div>
+<div class="card"><div class="icon">🧾</div><h3>Useful business details</h3><p>Display hours, service area, payments, languages, parking, accessibility and pickup/delivery information.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Earned exposure</h3><p>Free businesses can qualify for RFD Verified, Featured Local Spotlight and Business of the Month without paying for the award.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="local-deals"><div class="wrap"><div class="section-head"><div><h2>RFD Local Deals</h2><p>A dedicated place for participating businesses to publish current local offers. No fake deals are shown before an owner submits one.</p></div></div><div class="deals-grid">
+<div class="deal-card"><span class="badge gold">FREE PLAN</span><h3>1 active deal</h3><p>Free listings can publish one current offer after the business confirms the deal details and expiration date.</p></div>
+<div class="deal-card"><span class="badge">BASIC / PRO</span><h3>More active offers</h3><p>Paid tiers can run multiple promotions, coupon codes, seasonal offers, and RFD LIVE deal updates.</p></div>
+<div class="deal-card"><span class="badge gold">PRO GOLD</span><h3>Featured deal opportunities</h3><p>Pro Gold businesses can be considered for stronger deal placement in relevant city and category sections.</p></div>
+</div></div></section>
+<section class="section" id="rfd-pulse"><div class="wrap"><div class="section-head"><div><h2>RFD Pulse</h2><p>A preview of customer actions on this device. Real owner-wide analytics require a shared tracking backend before they can be reported across all visitors.</p></div></div><div class="pulse-grid">
+<div class="pulse-card"><strong id="pulseCalls">0</strong><small>Call taps</small></div><div class="pulse-card"><strong id="pulseDirections">0</strong><small>Direction taps</small></div><div class="pulse-card"><strong id="pulseWebsites">0</strong><small>Website taps</small></div><div class="pulse-card"><strong id="pulseReviews">0</strong><small>Review taps</small></div>
+</div><p class="notice">These counters are stored only in the current visitor’s browser. Do not use them as an owner performance report until a real analytics backend is connected.</p></div></section>
+<section class="section" id="owner-growth-tools"><div class="wrap"><div class="section-head"><div><h2>Owner growth tools</h2><p>RFD FLOW can become a lightweight growth hub, not just a directory listing.</p></div></div><div class="owner-tools-grid">
+<div class="owner-tool"><div class="icon">📥</div><h3>Lead inbox ready</h3><p>Profiles can include inquiry forms now, with a true shared lead inbox when a backend is connected.</p></div>
+<div class="owner-tool"><div class="icon">📊</div><h3>Growth reports</h3><p>Higher tiers can receive summaries for clicks, calls, directions, reviews, offers, and campaigns once shared analytics are enabled.</p></div>
+<div class="owner-tool"><div class="icon">🏷️</div><h3>Deal campaigns</h3><p>Create trackable offers, promo codes, seasonal campaigns, and featured deal opportunities.</p></div>
+<div class="owner-tool"><div class="icon">🧭</div><h3>Discovery insights</h3><p>Plan for keyword, category, city, and search-demand insights as RFD FLOW collects enough legitimate usage data.</p></div>
+</div></div></section><section class="section" id="pricing">
+<div class="wrap">
+<div class="section-head">
+<div><h2>Plans for local businesses</h2><p>Start free, then upgrade only when the extra visibility, tracking, analytics and promotional tools are worth it.</p></div>
 </div>
 <div class="pricing">
 <div class="price">
 <h3>Free</h3><div class="amount">$0</div>
-<ul><li>Basic business listing</li><li>Business phone number + website</li><li>Customer reviews</li><li>Search visibility</li><li>Eligible to apply for RFD Verified</li><li>Eligible for Business of the Month based on strong verified reviews</li></ul>
+<ul><li>Basic business listing</li><li>Confirmed phone number + website</li><li>Address + directions button</li><li>Instagram / social link</li><li>Customer reviews</li><li>Search visibility</li><li>Business category + city tags</li><li>Basic hours field</li><li>Short business description</li><li>Service area / neighborhood tag</li><li>Payment-method tags</li><li>Languages-spoken tags</li><li>Delivery / pickup indicator</li><li>Parking note</li><li>Accessibility note</li><li>One menu / services link</li><li>One primary photo</li><li>Basic call-to-action button</li><li>Google Maps directions link</li><li>Business correction / claim request</li><li>Owner response to verified reviews</li><li>Basic profile update request</li><li>Eligible to apply for RFD Verified</li><li>Eligible for Business of the Month</li><li>Eligible for Featured Local Spotlight</li><li>Open-now / current-status field</li><li>Price-range tag</li><li>Cuisine / service specialty tags</li><li>Family-friendly / pet-friendly tags</li><li>Outdoor-seating / pickup tags</li><li>Year established</li><li>Save / favorite button for customers</li><li>Report incorrect information button</li><li>One active Local Deal</li><li>One business FAQ</li></ul>
 <a class="btn" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20Free%20Listing">Start free</a>
 </div>
 <div class="price">
-<h3>Basic</h3><div class="amount">$19.99 <small>/ month</small></div>
-<ul><li>Everything in Free</li><li>Expanded profile</li><li>Promotional offers</li><li>Basic listing analytics</li><li>30-day money-back guarantee on initial paid membership</li></ul>
-<a class="btn gold" href="https://www.paypal.me/MalachiCasey290/19.99" rel="noopener" target="_blank">Pay $19.99 with PayPal</a>
-<a class="btn" href="https://cash.app/$MAcasey24/19.99" rel="noopener" target="_blank">Cash App $19.99</a>
-</div>
+<h3>Basic</h3><div class="amount">$9.99 <small>/ month</small></div>
+<ul><li>Everything in Free</li><li>Expanded business profile</li><li>More business photos</li><li>Menu / services link</li><li>Reservation / booking link</li><li>Online-ordering link</li><li>Gift-card link</li><li>Full hours of operation</li><li>Holiday hours updates</li><li>Business story / About section</li><li>Service-area coverage</li><li>Parking / accessibility details</li><li>Delivery / pickup details</li><li>Accepted-payment methods</li><li>Languages spoken</li><li>Promotional offers</li><li>Promo-code field</li><li>Call-to-action buttons</li><li>Lead inquiry button</li><li>Basic profile analytics</li><li>Tracked website clicks</li><li>Tracked phone taps</li><li>Tracked directions taps</li><li>Tracked review clicks</li><li>Downloadable QR code for your RFD profile</li><li>Owner update requests</li><li>Owner response to RFD reviews</li><li>Business FAQ mini-section</li><li>One featured product or service</li><li>One seasonal banner</li><li>30-day money-back guarantee</li><li>Customer inquiry form</li><li>Coupon-code tracking field</li><li>Up to 3 active Local Deals</li><li>One monthly RFD LIVE update</li><li>Downloadable review QR</li><li>Business announcement banner</li><li>Service / price-range details</li></ul>
+<a class="btn gold square-subscribe" data-plan="Basic" href="https://square.link/u/gK4g9ZN9" rel="noopener noreferrer" target="_blank">Subscribe to Basic with Square →</a></div>
 <div class="price popular">
-<div class="tag">MOST POPULAR</div>
-<h3>Pro Gold</h3><div class="amount">$49.99 <small>/ month</small></div>
-<ul><li>Everything in Basic</li><li>Featured placement opportunities</li><li>RFD LIVE update tools</li><li>Advanced profile presentation</li><li>Priority business support</li><li>30-day money-back guarantee on initial paid membership</li></ul>
-<a class="btn gold" href="https://www.paypal.me/MalachiCasey290/49.99" rel="noopener" target="_blank">Pay $49.99 with PayPal</a>
-<a class="btn" href="https://cash.app/$MAcasey24/49.99" rel="noopener" target="_blank">Cash App $49.99</a>
-</div>
+<div class="tag">POPULAR</div>
+<h3>Pro</h3><div class="amount">$19.99 <small>/ month</small></div>
+<ul><li>Everything in Basic</li><li>Priority category placement opportunities</li><li>RFD LIVE business updates</li><li>Enhanced profile layout</li><li>Featured photos / gallery section</li><li>Multiple promotional offers</li><li>Multiple service / menu links</li><li>Business FAQ section</li><li>Custom call-to-action text</li><li>Event / pop-up announcement</li><li>Hiring / now-hiring notice</li><li>Seasonal-hours banner</li><li>Limited-time deal banner</li><li>Advanced analytics</li><li>Weekly click summary</li><li>Lead-source tracking</li><li>Customer inquiry tracking</li><li>Review-request tools</li><li>Custom QR code with business name</li><li>Google review button integration</li><li>Featured category placement</li><li>Regional collection eligibility</li><li>Seasonal promotion eligibility</li><li>Social profile links section</li><li>Profile SEO cleanup / keyword tune-up</li><li>Multiple featured products or services</li><li>Priority support</li><li>Priority profile updates</li><li>Downloadable owner performance snapshot</li><li>30-day money-back guarantee</li><li>Multiple RFD LIVE updates</li><li>Lead-inbox ready profile</li><li>Popular-search keyword report</li><li>Review-growth summary</li><li>Top-performing offer report</li><li>Multiple event listings</li><li>Hiring posts</li><li>Multi-location profile support</li></ul>
+<a class="btn gold square-subscribe" data-plan="Pro" href="https://square.link/u/mrnje1A2" rel="noopener noreferrer" target="_blank">Subscribe to Pro with Square →</a></div>
+<div class="price popular">
+<div class="tag">BEST VALUE</div>
+<h3>Pro Gold</h3>
+<div class="amount">$29.99 <small>/ month</small></div>
+<ul><li>Everything in Pro</li><li>Top featured placement opportunities</li><li>Priority RFD LIVE visibility</li><li>Premium profile design</li><li>Hero image / featured banner</li><li>Expanded photo gallery</li><li>Featured products / services section</li><li>Featured menu / service cards</li><li>Multiple promo campaigns</li><li>Featured event / pop-up placement</li><li>Featured hiring notice</li><li>Advanced analytics dashboard</li><li>Monthly performance report</li><li>Calls, directions, website + review click totals</li><li>Google review + QR integration</li><li>Printable counter / window QR sticker asset</li><li>Printable review-request card</li><li>Lead and inquiry summary</li><li>Promo campaign spotlight opportunities</li><li>Homepage spotlight consideration</li><li>Regional spotlight consideration</li><li>Featured collection consideration</li><li>Founding-member badge eligibility</li><li>Priority owner support</li><li>Faster listing edits</li><li>Monthly profile optimization suggestions</li><li>Quarterly profile refresh</li><li>Exportable performance summary</li><li>Custom owner-requested profile sections</li><li>Social-media-ready business spotlight graphic</li><li>Custom promo graphic for RFD FLOW</li><li>Premium seasonal campaign graphic</li><li>Featured offer callout card</li><li>Priority correction handling</li><li>30-day money-back guarantee</li><li>Custom profile accent/theme</li><li>Premium profile URL planning</li><li>Homepage rotation opportunities</li><li>City / category spotlight rotation</li><li>Customer-action funnel report</li><li>Repeat-visitor insights when tracking backend is enabled</li><li>Campaign tracking</li><li>Priority onboarding</li><li>Full profile audit</li><li>Custom QR poster</li><li>Monthly RFD Growth Report</li></ul>
+<a class="btn gold square-subscribe" data-plan="Pro Gold" href="https://square.link/u/XhC1HgDb" rel="noopener noreferrer" target="_blank">Subscribe to Pro Gold with Square →</a></div>
 </div>
 <div class="guarantee">
 <div><strong>🛡️ 30-Day Money-Back Guarantee</strong><p>If you are not satisfied within 30 days of your initial Basic or Pro Gold membership purchase, contact RFD FLOW to request a refund of that membership payment.</p></div>
 <a class="btn green" href="mailto:rapidfrightdelivery@gmail.com?subject=RFD%20FLOW%20Refund%20Request">Request help</a>
+</div><p class="notice" style="margin-top:10px">Paid plans improve tools and visibility. RFD Verified, review verification and Business of the Month remain earned trust features and cannot be purchased.</p>
+<div class="notice" id="square-billing-note" style="margin-top:14px">
+<strong>Secure monthly billing through Square.</strong>
+  Basic is $9.99/month, Pro is $19.99/month, and Pro Gold is $29.99/month.
+  Paid memberships renew monthly until canceled. The 30-day money-back guarantee applies to the initial paid membership purchase.
+</div>
+</div>
+</section>
+<section class="section" id="profile-tools">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>More than a listing</h2>
+<p>RFD FLOW profiles can grow into mini storefronts that help customers understand a business before they call or visit.</p>
+</div>
+</div>
+<div class="feature-grid">
+<div class="card"><div class="icon">📖</div><h3>Business story</h3><p>Tell customers who you are, what you specialize in, and what makes the business different.</p></div>
+<div class="card"><div class="icon">🗺️</div><h3>Service areas</h3><p>Show neighborhoods, cities, delivery zones, or service areas so customers know whether the business serves them.</p></div>
+<div class="card"><div class="icon">🕒</div><h3>Visit details</h3><p>Add regular hours, holiday hours, parking information, accessibility notes, pickup options, and other useful details.</p></div>
+<div class="card"><div class="icon">🏷️</div><h3>Offers &amp; promo codes</h3><p>Run specials, first-visit promotions, and simple trackable promo codes.</p></div>
+<div class="card"><div class="icon">💬</div><h3>Owner responses</h3><p>Respond to verified RFD reviews, correct outdated details, and explain your side when a dispute occurs.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="conversion-tools">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Turn views into customers</h2>
+<p>The best profile is not just informative — it gives people obvious next steps.</p>
+</div>
+</div>
+<div class="feature-grid">
+<div class="card"><div class="icon">📅</div><h3>Booking links</h3><p>Send customers straight to a reservation, consultation, appointment, or booking page.</p></div>
+<div class="card"><div class="icon">🛒</div><h3>Order &amp; gift-card links</h3><p>Restaurants and shops can link directly to ordering, pickup, delivery, gift cards, or online stores.</p></div>
+<div class="card"><div class="icon">🎟️</div><h3>Events &amp; pop-ups</h3><p>Promote tastings, grand openings, vendor markets, pop-ups, workshops, or special events.</p></div>
+<div class="card"><div class="icon">🧑‍💼</div><h3>Now hiring</h3><p>Let local customers know when a business is hiring and link them to application details.</p></div>
+<div class="card"><div class="icon">🌎</div><h3>Useful customer details</h3><p>Show languages, accepted payments, accessibility, parking, pickup, delivery, and service-area information.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="marketing-assets">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Marketing tools for owners</h2>
+<p>Higher tiers can include practical assets owners can actually use outside RFD FLOW too.</p>
+</div>
+</div>
+<div class="feature-grid">
+<div class="card"><div class="icon">📱</div><h3>Social spotlight graphics</h3><p>Ready-to-post graphics for Instagram stories, posts, and local promotions.</p></div>
+<div class="card"><div class="icon">🪟</div><h3>Window QR assets</h3><p>Printable QR graphics for counters, windows, receipts, menus, or appointment desks.</p></div>
+<div class="card"><div class="icon">🔎</div><h3>Profile SEO tune-up</h3><p>Clean titles, categories, service keywords, and location wording so profiles are easier to discover.</p></div>
+<div class="card"><div class="icon">📣</div><h3>Promo campaign graphics</h3><p>Create simple campaign graphics for limited-time offers, events, seasonal specials, and launches.</p></div>
+<div class="card"><div class="icon">🧹</div><h3>Quarterly profile refresh</h3><p>Review outdated hours, links, photos, offers, and descriptions so premium profiles stay current.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="plan-compare">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>What changes as you upgrade</h2>
+<p>Free gets you discovered. Paid plans add stronger presentation, customer-action tools, tracking, and promotion.</p>
+</div>
+</div>
+<div class="plan-compare-grid">
+<div class="compare-row compare-head"><span>Feature</span><span>Free</span><span>Basic</span><span>Pro</span><span>Pro Gold</span></div>
+<div class="compare-row"><span>Business listing</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Phone, directions &amp; website</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Customer reviews</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Expanded profile</span><span>—</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Tracked customer actions</span><span>—</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>RFD LIVE updates</span><span>—</span><span>—</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Advanced analytics</span><span>—</span><span>—</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Monthly report</span><span>—</span><span>—</span><span>—</span><span>✓</span></div>
+<div class="compare-row"><span>Priority placement opportunities</span><span>—</span><span>—</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Premium profile layout</span><span>—</span><span>—</span><span>—</span><span>✓</span></div>
+<div class="compare-row"><span>Booking / ordering links</span><span>—</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Events / hiring notices</span><span>—</span><span>—</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Google review QR tools</span><span>—</span><span>—</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Social promo graphics</span><span>—</span><span>—</span><span>—</span><span>✓</span></div>
+<div class="compare-row"><span>Quarterly profile refresh</span><span>—</span><span>—</span><span>—</span><span>✓</span></div>
+<div class="compare-row"><span>Owner review responses</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Parking / accessibility info</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Service area / neighborhood tags</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Featured products / services</span><span>—</span><span>1</span><span>Multiple</span><span>Premium</span></div>
+<div class="compare-row"><span>Seasonal banners</span><span>—</span><span>1</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Performance snapshot</span><span>—</span><span>—</span><span>✓</span><span>✓</span></div>
+<div class="compare-row"><span>Priority correction handling</span><span>—</span><span>—</span><span>—</span><span>✓</span></div>
+<div class="compare-row"><span>Save / favorite business</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span></div><div class="compare-row"><span>Local Deals</span><span>1</span><span>3</span><span>Multiple</span><span>Featured opportunities</span></div><div class="compare-row"><span>RFD Pulse / analytics</span><span>—</span><span>Basic</span><span>Advanced</span><span>Growth Report</span></div><div class="compare-row"><span>Inquiry / lead tools</span><span>—</span><span>✓</span><span>✓</span><span>✓</span></div><div class="compare-row"><span>Event / hiring posts</span><span>—</span><span>—</span><span>✓</span><span>Featured</span></div><div class="compare-row"><span>Campaign tracking</span><span>—</span><span>—</span><span>✓</span><span>Advanced</span></div></div>
+</div>
+</section>
+<section class="section" id="upgrade-benefits">
+<div class="wrap">
+<div class="section-head">
+<div>
+<h2>Why businesses upgrade</h2>
+<p>Paid plans are about better tools, visibility and measurable performance — not buying trust.</p>
+</div>
+</div>
+<div class="feature-grid">
+<div class="card"><div class="icon">📈</div><h3>See what works</h3><p>Track profile visits, website clicks, calls, directions and review activity so owners can see whether RFD FLOW is actually helping.</p></div>
+<div class="card"><div class="icon">📲</div><h3>Generate more action</h3><p>Use stronger call-to-action buttons, menus, services, promotions and inquiry tools to turn profile views into real customer actions.</p></div>
+<div class="card"><div class="icon">🎯</div><h3>Better visibility</h3><p>Paid members can receive stronger placement opportunities in relevant categories, regions and promotional sections.</p></div>
+<div class="card"><div class="icon">⭐</div><h3>Review growth tools</h3><p>Use Google review buttons, RFD review prompts and QR assets to make it easier for real customers to leave verified feedback.</p></div>
+<div class="card"><div class="icon">🧾</div><h3>Performance reports</h3><p>Higher tiers can receive easy-to-read summaries showing the traffic and customer actions their listing generated.</p></div>
 </div>
 </div>
 </section>
@@ -494,8 +1647,6 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 </div>
 </section>
 </main>
-
-
 <section class="section">
 <div class="wrap">
 <div class="card">
@@ -504,7 +1655,6 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 </div>
 </div>
 </section>
-
 <details class="support-widget" id="supportWidget">
 <summary aria-label="Open RFD FLOW support bot">🤖 Ask RFD Bot</summary>
 <div class="support-panel" id="chatBox">
@@ -519,7 +1669,7 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <div class="support-faq">
 <details>
 <summary>💰 Pricing</summary>
-<p>Free is $0. Basic is $19.99/month. Pro Gold is $49.99/month.</p>
+<p>Free is $0. Basic is $9.99/month. Pro is $19.99/month. Pro Gold is $29.99/month.</p>
 </details>
 <details>
 <summary>⭐ Reviews</summary>
@@ -550,6 +1700,17 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 </div>
 </div>
 </details>
+<section class="section">
+<div class="wrap">
+<div class="launch-cta">
+<div>
+<h3>Own a local business?</h3>
+<p>Start with a free RFD FLOW listing. Add your real phone number, hours, website, menu, Instagram and verified customer reviews.</p>
+</div>
+<a class="btn gold" href="mailto:rapidfrightdelivery@gmail.com?subject=List%20my%20business%20on%20RFD%20FLOW">List my business free →</a>
+</div>
+</div>
+</section>
 <footer>
 <div class="wrap">
 <strong style="color:#dce6f2">RFD FLOW OC+LA+IE</strong><br/>
@@ -558,32 +1719,109 @@ footer{padding:38px 0 70px;color:#8491a2;font-size:12px}
 <div class="notice" style="margin-top:12px">Launch policy: public listings may be free. RFD Verified, review verification, Business of the Month, and review moderation are editorial/trust decisions and are not automatically granted by payment.</div></div>
 </footer>
 <script>
+
 const input=document.getElementById('searchInput');
 const region=document.getElementById('regionFilter');
-const verified=document.getElementById('verifiedFilter');
 const cards=[...document.querySelectorAll('.biz')];
 const count=document.getElementById('resultCount');
+const noResults=document.getElementById('noResults');
+const clearSearchBtn=document.getElementById('clearSearchBtn');
+
+function normalizeSearchText(value){
+  return (value || '')
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'')
+    .toLowerCase()
+    .replace(/&/g,' and ')
+    .replace(/[^a-z0-9]+/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+
+function expandSearchTokens(tokens){
+  const aliases={
+    'oc':['orange','county'],
+    'la':['los','angeles'],
+    'ie':['inland','empire'],
+    'foodhall':['food','hall'],
+    'foodcourt':['food','court'],
+    'restaurant':['restaurant','food','pizza','cafe','chicken','indian'],
+    'restaurants':['restaurant','food','pizza','cafe','chicken','indian'],
+    'boutique':['boutique','clothing','fashion','consignment'],
+    'shop':['shop','store','boutique','market'],
+    'shops':['shop','store','boutique','market'],
+    'dessert':['dessert','donut','doughnut','candy','bakery','boba','sweet'],
+    'hvac':['hvac','air','mechanical']
+  };
+  const out=[];
+  tokens.forEach(t=>{
+    out.push(t);
+    if(aliases[t]) out.push(...aliases[t]);
+  });
+  return [...new Set(out)];
+}
+
+function cardSearchText(card){
+  const regionName = card.dataset.region==='OC' ? 'orange county oc'
+    : card.dataset.region==='LA' ? 'los angeles la'
+    : card.dataset.region==='IE' ? 'inland empire ie'
+    : '';
+  return normalizeSearchText(
+    (card.dataset.search || '') + ' ' +
+    (card.textContent || '') + ' ' +
+    regionName
+  );
+}
 
 function filterBusinesses(){
-  const q=input.value.trim().toLowerCase();
-  const r=region.value;
-  const v=verified.value;
+  const raw=normalizeSearchText(input ? input.value : '');
+  const originalTokens=raw ? raw.split(' ').filter(Boolean) : [];
+  const tokens=expandSearchTokens(originalTokens);
+  const r=region ? region.value : '';
   let shown=0;
+
   cards.forEach(card=>{
-    const matchQ=!q || card.dataset.search.toLowerCase().includes(q);
+    const haystack=cardSearchText(card);
+
+    // Every original search word should be represented.
+    // For common category words, expanded aliases make matching more forgiving.
+    const matchQ = !originalTokens.length || originalTokens.every(token=>{
+      if(haystack.includes(token)) return true;
+      const aliasGroup=expandSearchTokens([token]);
+      return aliasGroup.some(a=>haystack.includes(a));
+    });
+
     const matchR=!r || card.dataset.region===r;
-    const matchV=!v || card.dataset.verified===v;
-    const show=matchQ&&matchR&&matchV;
+    const show=matchQ && matchR;
     card.classList.toggle('hidden',!show);
     if(show) shown++;
   });
-  count.textContent=shown+" listing"+(shown===1?"":"s")+" shown";
+
+  if(count) count.textContent=shown+" listing"+(shown===1?"":"s")+" shown";
+  if(noResults) noResults.classList.toggle('hidden',shown!==0);
 }
-document.getElementById('searchBtn').addEventListener('click',filterBusinesses);
-input.addEventListener('input',filterBusinesses);
-region.addEventListener('change',filterBusinesses);
-verified.addEventListener('change',filterBusinesses);
+
+if(document.getElementById('searchBtn')){
+  document.getElementById('searchBtn').addEventListener('click',filterBusinesses);
+}
+if(input){
+  input.addEventListener('input',filterBusinesses);
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){e.preventDefault();filterBusinesses();}
+  });
+}
+if(region) region.addEventListener('change',filterBusinesses);
+if(clearSearchBtn){
+  clearSearchBtn.addEventListener('click',()=>{
+    if(input) input.value='';
+    if(region) region.value='';
+    filterBusinesses();
+    if(input) input.focus();
+  });
+}
 filterBusinesses();
+
 
 
 
@@ -604,7 +1842,7 @@ function botReply(text){
   let answer;
 
   if(/price|cost|how much|basic|pro gold|membership/.test(s)){
-    answer='RFD FLOW has three plans: Free $0, Basic $19.99/month, and Pro Gold $49.99/month. Free listings can still show a confirmed phone number, receive real customer reviews, appear in search, apply for RFD Verified, and qualify for Business of the Month.';
+    answer='RFD FLOW has three plans: Free $0, Basic $9.99/month, Pro $19.99/month, and Pro Gold $29.99/month. Free listings can still show a confirmed phone number, receive real customer reviews, appear in search, apply for RFD Verified, and qualify for Business of the Month.';
   } else if(/refund|money back|30 day|guarantee/.test(s)){
     answer='RFD FLOW offers a 30-day money-back guarantee on the initial Basic or Pro Gold membership purchase. For a refund request, email rapidfrightdelivery@gmail.com.';
   } else if(/review|rating|stars/.test(s)){
@@ -612,7 +1850,7 @@ function botReply(text){
   } else if(/verified|verification|verify/.test(s)){
     answer='RFD Verified is based on checking core business information such as the business phone number, website, ownership or operating status. Paying for a plan does not automatically earn verification.';
   } else if(/business of the month|business month|award|featured business/.test(s)){
-    answer='Business of the Month is open to Free, Basic, and Pro Gold businesses. Strong verified customer reviews, listing quality, and local reputation matter most. Paid membership does not buy the award.';
+    answer='Current status: Business of the Month has not started yet. It begins once a listed business earns its first verified RFD FLOW reviews. Until then, homepage spotlights are labeled Featured Local Spotlight. Free, Basic, and Pro Gold businesses can all qualify once verified reviews exist.';
   } else if(/phone|number|contact number/.test(s)){
     answer='A confirmed business phone number can be displayed even on a Free listing. RFD FLOW should confirm the number before publishing it.';
   } else if(/list my business|add my business|join|sign up|get listed|listing/.test(s)){
@@ -651,6 +1889,7 @@ document.querySelectorAll('[data-filter]').forEach(el=>{
     const search=document.getElementById('searchInput');
     if(search){
       search.value=q;
+      if(region) region.value='';
       filterBusinesses();
       setTimeout(()=>document.getElementById('discover').scrollIntoView({behavior:'smooth',block:'start'}),50);
     }
@@ -697,6 +1936,64 @@ document.querySelectorAll('.biz[data-map-url]').forEach(card=>{
       window.open(card.dataset.mapUrl,'_blank','noopener');
     }
   });
+});
+
+document.querySelectorAll('[data-region-jump]').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const r=el.dataset.regionJump;
+    const regionSelect=document.getElementById('regionFilter');
+    const search=document.getElementById('searchInput');
+    if(search) search.value='';
+    if(regionSelect) regionSelect.value=r;
+    if(typeof filterBusinesses==='function') filterBusinesses();
+    setTimeout(()=>document.getElementById('discover').scrollIntoView({behavior:'smooth',block:'start'}),50);
+  });
+});
+
+const RFD_FAV_KEY='rfdFlowFavorites';
+const RFD_PULSE_KEY='rfdFlowPulse';
+function getFavorites(){try{return JSON.parse(localStorage.getItem(RFD_FAV_KEY)||'[]')}catch(e){return []}}
+function setFavorites(items){localStorage.setItem(RFD_FAV_KEY,JSON.stringify(items));}
+function renderFavorites(){const items=getFavorites();const countEl=document.getElementById('favoriteCount');const list=document.getElementById('favoritesList');if(countEl)countEl.textContent=items.length;document.querySelectorAll('[data-save-business]').forEach(btn=>{const saved=items.includes(btn.dataset.saveBusiness);btn.classList.toggle('saved',saved);btn.textContent=saved?'♥ Saved':'♡ Save';});if(list){list.innerHTML='';if(!items.length){list.innerHTML='<small style="color:var(--muted)">No saved businesses yet.</small>';}else{items.forEach(name=>{const row=document.createElement('div');row.className='favorite-item';const span=document.createElement('span');span.textContent=name;const b=document.createElement('button');b.className='btn';b.type='button';b.dataset.removeFavorite=name;b.textContent='Remove';row.append(span,b);list.appendChild(row);});}}}
+document.querySelectorAll('[data-save-business]').forEach(btn=>{btn.addEventListener('click',()=>{const name=btn.dataset.saveBusiness;let items=getFavorites();items=items.includes(name)?items.filter(x=>x!==name):[...items,name];setFavorites(items);renderFavorites();});});
+const showFav=document.getElementById('showFavoritesBtn');if(showFav){showFav.addEventListener('click',()=>{const p=document.getElementById('favoritesPanel');if(p)p.classList.toggle('open');});}
+document.addEventListener('click',e=>{const btn=e.target.closest('[data-remove-favorite]');if(!btn)return;setFavorites(getFavorites().filter(x=>x!==btn.dataset.removeFavorite));renderFavorites();});
+renderFavorites();
+function getPulse(){try{return JSON.parse(localStorage.getItem(RFD_PULSE_KEY)||'{"calls":0,"directions":0,"websites":0,"reviews":0}')}catch(e){return {calls:0,directions:0,websites:0,reviews:0}}}
+function setPulse(p){localStorage.setItem(RFD_PULSE_KEY,JSON.stringify(p));}
+function renderPulse(){const p=getPulse();const map={pulseCalls:p.calls,pulseDirections:p.directions,pulseWebsites:p.websites,pulseReviews:p.reviews};Object.entries(map).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val});}
+document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=(a.getAttribute('href')||'').toLowerCase();let type=null;if(href.startsWith('tel:'))type='calls';else if(href.includes('google.com/maps'))type='directions';else if(href.startsWith('http')&&!href.includes('google.com/maps'))type='websites';if((a.textContent||'').toLowerCase().includes('review'))type='reviews';if(type){const p=getPulse();p[type]=(p[type]||0)+1;setPulse(p);renderPulse();}});
+renderPulse();
+
+// service category cards
+document.querySelectorAll('[data-filter]').forEach(el=>{
+  if(el.dataset.rfdFilterBound) return;
+  el.dataset.rfdFilterBound='1';
+  el.addEventListener('click',()=>{
+    const q=el.dataset.filter || '';
+    const input=document.getElementById('searchInput');
+    if(input) input.value=q;
+    if(typeof filterBusinesses==='function') filterBusinesses();
+    const discover=document.getElementById('discover');
+    if(discover) setTimeout(()=>discover.scrollIntoView({behavior:'smooth',block:'start'}),40);
+  });
+});
+
+// rfdBizFallback: make dynamically added business cards clickable without hijacking buttons/links
+document.addEventListener('click', function(e){
+  const card=e.target.closest('.biz');
+  if(!card) return;
+  if(e.target.closest('a,button,input,select,textarea')) return;
+  const url=card.dataset.mapUrl;
+  if(url) window.open(url,'_blank','noopener');
+});
+document.addEventListener('keydown', function(e){
+  const card=e.target.closest && e.target.closest('.biz');
+  if(!card || (e.key!=='Enter' && e.key!==' ')) return;
+  if(e.target.closest('a,button,input,select,textarea')) return;
+  e.preventDefault();
+  const url=card.dataset.mapUrl;
+  if(url) window.open(url,'_blank','noopener');
 });
 </script>
 </body>
