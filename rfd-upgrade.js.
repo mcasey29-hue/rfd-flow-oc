@@ -1,0 +1,33 @@
+// RFD FLOW Customer Support
+(function () {
+  const button = document.createElement("button");
+  button.textContent = "💬 RFD Support";
+
+  button.style.cssText = `
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:14px 20px;
+    background:#d4af37;
+    color:#101a2c;
+    border:0;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:9999;
+  `;
+
+  button.onclick = function () {
+    alert(
+      "Welcome to RFD FLOW Support!\n\n" +
+      "Need help with a business listing, " +
+      "subscription, or finding a service?\n\n" +
+      "More support features are coming soon."
+    );
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.appendChild(button);
+  });
+})();
+Sxcc 
