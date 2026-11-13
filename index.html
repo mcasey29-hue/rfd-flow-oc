@@ -1964,7 +1964,8 @@ function getPulse(){try{return JSON.parse(localStorage.getItem(RFD_PULSE_KEY)||'
 function setPulse(p){localStorage.setItem(RFD_PULSE_KEY,JSON.stringify(p));}
 function renderPulse(){const p=getPulse();const map={pulseCalls:p.calls,pulseDirections:p.directions,pulseWebsites:p.websites,pulseReviews:p.reviews};Object.entries(map).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val});}
 document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=(a.getAttribute('href')||'').toLowerCase();let type=null;if(href.startsWith('tel:'))type='calls';else if(href.includes('google.com/maps'))type='directions';else if(href.startsWith('http')&&!href.includes('google.com/maps'))type='websites';if((a.textContent||'').toLowerCase().includes('review'))type='reviews';if(type){const p=getPulse();p[type]=(p[type]||0)+1;setPulse(p);renderPulse();}});
-renderPulse();
+</script>
+
 
 // service category cards
 document.querySelectorAll('[data-filter]').forEach(el=>{
