@@ -2017,5 +2017,102 @@ document.addEventListener('keydown', function(e){
 
 </body>
 </html>
+// RFD FLOW - Founding Business #001
+(function () {
+  function addFoundingBusiness() {
+    if (document.getElementById("rfd-founding-001")) return;
+
+    const section = document.createElement("section");
+    section.id = "rfd-founding-001";
+
+    section.style.cssText = `
+      background:#101a2c;
+      color:white;
+      padding:25px;
+      margin:20px auto;
+      max-width:850px;
+      border:2px solid #d4af37;
+      border-radius:18px;
+      text-align:center;
+      box-sizing:border-box;
+    `;
+
+    section.innerHTML = `
+      <h2 style="color:#d4af37">
+        🏆 FOUNDING BUSINESS #001
+      </h2>
+
+      <h2>💈 Truly Blessed Barbershop #2</h2>
+
+      <p>
+        3143 Airway Ave, Suite C1<br>
+        Costa Mesa, CA 92626
+      </p>
+
+      <hr style="border-color:#d4af37">
+
+      <h3>✂️ Featured Barber: Pedro Perez</h3>
+
+      <p>Professional Barber | Costa Mesa</p>
+
+      <p>
+        Haircuts • Barber • Grooming
+      </p>
+
+      <a
+        href="https://www.instagram.com/jr.cutzx/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="
+          display:inline-block;
+          background:#d4af37;
+          color:#101a2c;
+          padding:14px 22px;
+          border-radius:10px;
+          font-weight:bold;
+          text-decoration:none;
+          margin:8px;
+        "
+      >
+        📅 Book with Pedro
+      </a>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=3143+Airway+Ave+Suite+C1+Costa+Mesa+CA"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="
+          display:inline-block;
+          color:#d4af37;
+          padding:14px;
+        "
+      >
+        📍 Get Directions
+      </a>
+
+      <p style="font-size:12px;color:#ccc">
+        Proudly recognized as RFD FLOW's
+        first participating business.
+      </p>
+    `;
+
+    const main = document.querySelector("main");
+
+    if (main) {
+      main.prepend(section);
+    } else {
+      document.body.prepend(section);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      addFoundingBusiness
+    );
+  } else {
+    addFoundingBusiness();
+  }
+})();
 
   
