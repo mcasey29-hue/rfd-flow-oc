@@ -31,5 +31,46 @@ launch.addEventListener('click',()=>toggleChat(!panel.classList.contains('open')
 function answer(s){const q=s.toLowerCase();if(/recogniz|thank|compliment|review|submit/.test(q))return 'You can try the recognition form on this page. It is a demo only and does not send or save submissions. A verified submission system is planned.';if(/passport|career|achievement|profile/.test(q))return 'Career Passport is a planned, opt-in way for workers to keep verified achievements when changing jobs. Public profiles and accounts are not live yet.';if(/job|hiring|opportunit|connect/.test(q))return 'Career Connect private job invitations are planned for a future secure release. There is no live messaging or job matching on this page.';if(/point|reward|gold|star/.test(q))return 'The proposed reward is one free year of Pro Gold after 10 verified recognition points. Verification, points, and rewards are not live yet.';if(/privacy|consent|photo|personal/.test(q))return 'Employees would control whether their profiles are public. Please do not enter private details in this demo. The form does not send information to RFD FLOW.';if(/list|business|directory|barber|pedro/.test(q))return 'For business listings, visit the RFD FLOW directory using the “Business Directory” link at the top. This HEROES page is a separate preview.';if(/human|contact|help|support|refund|payment/.test(q))return 'I am an automated FAQ, not a live agent. For account or billing questions, use the official contact options on the main RFD FLOW website. Please do not share payment details here.';return 'I can explain employee recognition, Career Passport, private job opportunities, privacy, and rewards. This is a rule-based demo, not a live support agent. What would you like to know?';}
 addBubble('Hi! 💙 I’m the RFD HEROES automated FAQ. Ask me about recognizing a worker, Career Passport, rewards, or Career Connect.');
 document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();const s=chatInput.value.trim();if(!s)return;addBubble(s,'user');addBubble(answer(s));chatInput.value='';chatInput.focus();});
-</script>
+// Improved RFD HEROES chatbot responses
+answer = function(message) {
+  const q = String(message).toLowerCase().trim();
+
+  if (/credit|steal|stole|employer|boss|retaliat|suspend/.test(q)) {
+    return "RFD FLOW protects employee recognition. Businesses found deliberately taking credit for employees' work face removal, suspension, and applicable refunds after an evidence review. Employees and businesses can dispute inaccurate claims.";
+  }
+
+  if (/refund|payment|subscription/.test(q)) {
+    return "RFD FLOW offers free listings and optional paid memberships. Our first-payment money-back guarantee applies for 30 days. Confirmed employee-credit violations also trigger refunds under our enforcement policy.";
+  }
+
+  if (/pedro|barber/.test(q)) {
+    return "Pedro Perez is featured as a Costa Mesa barber. Visit his RFD HEROES profile for more information.";
+  }
+
+  if (/recognition|recognize|employee|worker|reward/.test(q)) {
+    return "RFD HEROES celebrates employees who provide excellent service. Verified recognition, star points, and employee rewards are planned features.";
+  }
+
+  if (/passport|career/.test(q)) {
+    return "Career Passport is a planned feature designed to help workers carry verified achievements between jobs.";
+  }
+
+  if (/job|hiring|opportunity/.test(q)) {
+    return "Career Connect is being developed to help workers discover opportunities. Private job messaging is not live yet.";
+  }
+
+  if (/spotlight|business/.test(q)) {
+    return "Every eligible business can receive Business Spotlight recognition in its local service area, including businesses using our free plan.";
+  }
+
+  if (/privacy|personal|information/.test(q)) {
+    return "RFD HEROES is designed around employee privacy. Personal information should only be displayed with appropriate permission.";
+  }
+
+  return "I can help with employee recognition, employer accountability, refunds, Business Spotlight, Career Passport, and job opportunities. What would you like to know?";
+};
+
+</script>   
+  
+  
 </body></html>
