@@ -1,0 +1,327 @@
+   Add RFD Flow Business Pages prototype
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RFD Flow | Your business page</title>
+<style>
+:root{color-scheme:dark;--bg:#071226;--panel:#0f1f38;--panel2:#132844;--line:#29415e;--text:#eef7ff;--muted:#9eb4ce;--blue:#26b7ff;--blue-deep:#0c7fd6;--ink:#001b31}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+
+header{position:sticky;top:0;z-index:20;background:rgba(7,18,38,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.bar{display:flex;align-items:center;gap:16px;min-height:62px;flex-wrap:wrap}
+.brand{font-size:25px;font-weight:900;font-style:italic;letter-spacing:-1.5px}
+.brand b{color:var(--blue)}
+.seg{display:flex;background:#0a1a30;border:1px solid var(--line);border-radius:999px;padding:3px;margin-left:auto}
+.seg button{background:none;border:0;padding:8px 16px;border-radius:999px;font-weight:700;color:#bfd5ed}
+.seg button[aria-pressed="true"]{background:var(--blue-deep);color:#fff}
+
+.btn{border:0;border-radius:999px;padding:11px 20px;font-weight:800;background:var(--blue);color:var(--ink)}
+.btn:hover{background:#5acbff}
+.btn.ghost{background:transparent;border:1px solid #3a5a7c;color:var(--text)}
+.btn.ghost:hover{border-color:var(--blue)}
+.btn.sm{padding:7px 14px;font-size:14px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.layout{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;padding:24px 0 70px;align-items:start}
+.layout.solo{grid-template-columns:minmax(0,760px);justify-content:center}
+.layout.solo .editor{display:none}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px}
+.editor{position:sticky;top:78px;max-height:calc(100vh - 94px);overflow:auto}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;background:none;border:0;padding:14px 8px;font-weight:700;color:var(--muted);border-bottom:3px solid transparent}
+.tabs button[aria-selected="true"]{color:#fff;border-bottom-color:var(--blue)}
+.pane{padding:18px}
+.pane[hidden]{display:none}
+.pane h3{margin:0 0 4px;font-size:18px}
+.pane .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+label{display:block;font-weight:700;margin:14px 0 6px;font-size:15px}
+input[type=text],input[type=tel],select,textarea{width:100%;background:#081a2d;border:1px solid #34506b;border-radius:8px;padding:10px 12px}
+textarea{min-height:84px;resize:vertical}
+input[type=file]{width:100%;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hint{color:var(--muted);font-size:13px;margin:6px 0 0}
+.divider{border:0;border-top:1px solid var(--line);margin:20px 0}
+
+/* link bar */
+.linkbar{display:flex;gap:8px;align-items:center;background:#081a2d;border:1px solid #34506b;border-radius:999px;padding:6px 6px 6px 16px;margin-bottom:16px}
+.linkbar span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}
+.linkbar span i{color:var(--muted);font-style:normal;font-weight:500}
+
+/* page preview */
+.page{overflow:hidden}
+.banner{height:150px}
+.phead{display:flex;gap:16px;align-items:flex-end;margin:-40px 20px 0;flex-wrap:wrap}
+.avatar{flex:none;width:82px;height:82px;border-radius:20px;border:4px solid var(--panel);display:grid;place-items:center;font-size:34px;font-weight:900;color:var(--ink);background:var(--blue)}
+.phead h1{margin:0;font-size:26px;letter-spacing:-.8px;line-height:1.15}
+.phead .meta{color:var(--muted)}
+.pbody{padding:20px}
+.pbody h2{font-size:20px;margin:24px 0 8px;letter-spacing:-.4px}
+.pbody h2:first-child{margin-top:0}
+.pbody p{margin:0;color:#d3e3f4}
+.svc{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.svc li{background:var(--panel2);border:1px solid #2b4d6a;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.jobs{display:grid;gap:18px}
+.job h3{margin:10px 0 0;font-size:16px}
+
+.ba{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#000;user-select:none;touch-action:pan-y}
+.ba .layer{position:absolute;inset:0;background-size:cover;background-position:center}
+.ba .before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba .tag{position:absolute;top:10px;padding:4px 11px;border-radius:999px;background:rgba(7,18,38,.82);font-size:13px;font-weight:700}
+.ba .tag.l{left:10px}.ba .tag.r{right:10px}
+.ba .knob{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+.ba .knob::after{content:"\2194";position:absolute;top:50%;left:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-weight:900}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+
+.qform{background:#0b1a30;border:1px solid var(--line);border-radius:14px;padding:18px}
+.qform .ok{margin-top:12px;padding:12px 14px;border-radius:10px;background:#0f3b5e;border:1px solid var(--blue)}
+
+/* requests */
+.req{padding:14px 16px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:var(--panel2)}
+.req h4{margin:0 0 2px;font-size:16px}
+.req p{margin:4px 0 8px;color:#d3e3f4}
+.req .meta{color:var(--muted);font-size:13px}
+.req.done{opacity:.6}
+.empty{padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
+.badge{display:inline-block;min-width:20px;padding:0 6px;margin-left:6px;border-radius:999px;background:var(--blue);color:var(--ink);font-size:12px;font-weight:800;line-height:20px}
+
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#14619a;border:1px solid #6cd9ff;padding:12px 18px;border-radius:12px;z-index:50;max-width:calc(100% - 32px);box-shadow:0 10px 30px #0009}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .editor{position:static;max-height:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">RFD <b>Flow</b></div>
+    <div class="seg" role="group" aria-label="Preview as">
+      <button id="modeOwner" aria-pressed="true">I'm the business</button>
+      <button id="modeCust" aria-pressed="false">I'm the customer</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="layout" id="layout">
+
+    <aside class="card editor" aria-label="Page editor">
+      <div class="tabs" role="tablist">
+        <button role="tab" id="tabEdit" aria-selected="true">Edit your page</button>
+        <button role="tab" id="tabReq" aria-selected="false">Requests<span class="badge" id="badge" hidden>0</span></button>
+      </div>
+
+      <div class="pane" id="paneEdit">
+        <h3>Your page</h3>
+        <p class="sub">Fill this in and the page on the right updates as you type.</p>
+
+        <label for="fName">Business name</label>
+        <input id="fName" type="text" maxlength="50" value="Harbor Concrete Co.">
+
+        <div class="two">
+          <div><label for="fCat">What you do</label>
+            <select id="fCat">
+              <option>Concrete</option><option>Landscaping</option><option>Auto detailing</option>
+              <option>Tile</option><option>Painting</option><option>Cleaning</option><option>Photography</option><option>Other</option>
+            </select></div>
+          <div><label for="fCity">City</label>
+            <input id="fCity" type="text" maxlength="30" value="Costa Mesa"></div>
+        </div>
+
+        <label for="fAbout">About you</label>
+        <textarea id="fAbout" maxlength="300">Family-run crew doing garage floors, patios, and driveways across Orange County. Free estimates, and we send photos when the job is done.</textarea>
+
+        <label for="fSvc">Services (one per line)</label>
+        <textarea id="fSvc">Garage floor polish and seal
+Patios and slabs
+Driveway repair</textarea>
+
+        <hr class="divider">
+        <h3>Add a job</h3>
+        <p class="sub">Upload a before and an after photo from the same angle.</p>
+        <label for="jTitle">What was the job?</label>
+        <input id="jTitle" type="text" maxlength="60" placeholder="Two-car garage, polished and sealed">
+        <label for="jBefore">Before photo</label>
+        <input id="jBefore" type="file" accept="image/*">
+        <label for="jAfter">After photo</label>
+        <input id="jAfter" type="file" accept="image/*">
+        <p style="margin:16px 0 0"><button class="btn sm" id="addJob">Add job to page</button></p>
+        <p class="hint">Photos stay in this browser tab for now.</p>
+
+        <hr class="divider">
+        <p class="hint" style="margin:0">Your link is shown above the page. In this preview it isn't live yet. Once it is, you'd paste it in your Instagram bio, texts, and on your truck.</p>
+      </div>
+
+      <div class="pane" id="paneReq" hidden>
+        <h3>Quote requests</h3>
+        <p class="sub">Requests from customers on your page land here. Switch to "I'm the customer" and send one to try it.</p>
+        <div id="reqList"></div>
+      </div>
+    </aside>
+
+    <section aria-label="Your public page">
+      <div class="linkbar">
+        <span id="linkText"><i>rfdflow.com/</i>harbor-concrete</span>
+        <button class="btn sm" id="copy">Copy link</button>
+      </div>
+      <article class="card page" id="page"></article>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">Preview only. Nothing is published, and requests are not sent to anyone. Photos and requests disappear when you close this tab.</div></footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const demoScenes={
+  floor:{before:'radial-gradient(ellipse at 30% 70%,#4a4a44 0,transparent 35%),radial-gradient(ellipse at 72% 40%,#5b5348 0,transparent 30%),linear-gradient(180deg,#7a7770,#4a4844)',
+         after:'linear-gradient(115deg,transparent 30%,rgba(255,255,255,.35) 42%,transparent 54%),linear-gradient(180deg,#9aa6b0,#46515c)'},
+  patio:{before:'radial-gradient(ellipse at 25% 60%,#6b5f45 0,transparent 40%),linear-gradient(180deg,#a79f86,#7d7459)',
+         after:'linear-gradient(#5d6770 2px,transparent 2px) 0 0/90px 90px,linear-gradient(90deg,#5d6770 2px,transparent 2px) 0 0/90px 90px,linear-gradient(180deg,#c9d0d6,#9aa5ae)'}
+};
+
+const state={
+  mode:'owner',
+  name:'Harbor Concrete Co.',cat:'Concrete',city:'Costa Mesa',
+  about:$('#fAbout').value,svc:$('#fSvc').value,
+  jobs:[
+    {title:'Two-car garage, polished and sealed',before:demoScenes.floor.before,after:demoScenes.floor.after},
+    {title:'Backyard patio, new slab',before:demoScenes.patio.before,after:demoScenes.patio.after}
+  ],
+  reqs:[]
+};
+
+let toastT;
+function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,3200)}
+const slug=n=>(n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||'your-business').slice(0,30);
+
+function slider(job){
+  return `<div class="ba" style="--pos:50%">
+    <div class="layer" style="background:${job.after}"></div>
+    <div class="layer before" style="background:${job.before}"></div>
+    <span class="tag l">Before</span><span class="tag r">After</span>
+    <input type="range" min="0" max="100" value="50" aria-label="Compare before and after for ${esc(job.title)}">
+    <div class="knob"></div></div>`;
+}
+document.addEventListener('input',e=>{
+  if(e.target.matches('.ba input'))e.target.closest('.ba').style.setProperty('--pos',e.target.value+'%');
+});
+
+function renderPage(keepForm){
+  const s=state;
+  const services=s.svc.split('\n').map(x=>x.trim()).filter(Boolean);
+  $('#linkText').innerHTML=`<i>rfdflow.com/</i>${esc(slug(s.name))}`;
+  const existing=$('#qName')?{n:$('#qName').value,c:$('#qContact').value,w:$('#qWhat').value,d:$('#qDetails').value}:{n:'',c:'',w:'',d:''};
+  $('#page').innerHTML=`
+    <div class="banner" style="background:${s.jobs[0]?s.jobs[0].after:demoScenes.floor.after}"></div>
+    <div class="phead">
+      <div class="avatar">${esc((s.name.trim()[0]||'?').toUpperCase())}</div>
+      <div><h1>${esc(s.name||'Your business name')}</h1>
+      <div class="meta">${esc(s.cat)} in ${esc(s.city||'your city')}</div></div>
+    </div>
+    <div class="pbody">
+      <h2>About</h2>
+      <p>${esc(s.about)||'Tell customers who you are and what you do.'}</p>
+      ${services.length?`<h2>Services</h2><ul class="svc">${services.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+      <h2>Our work</h2>
+      ${s.jobs.length?`<div class="jobs">${s.jobs.map(j=>`<div class="job">${slider(j)}<h3>${esc(j.title)}</h3></div>`).join('')}</div>`
+        :'<div class="empty">No jobs yet. Add a before and after photo to show your work.</div>'}
+      <h2>Ask for a quote</h2>
+      <form class="qform" id="qForm" novalidate>
+        <label for="qName" style="margin-top:0">Your name</label>
+        <input id="qName" type="text" maxlength="40" autocomplete="name">
+        <label for="qContact">Phone or email</label>
+        <input id="qContact" type="text" maxlength="60" autocomplete="off">
+        <label for="qWhat">What do you need?</label>
+        <input id="qWhat" type="text" maxlength="80" placeholder="Polish my garage floor">
+        <label for="qDetails">Details</label>
+        <textarea id="qDetails" maxlength="400" placeholder="Size, timing, anything else we should know."></textarea>
+        <p style="margin:16px 0 0"><button class="btn" type="submit">Send request</button></p>
+        <p class="hint">No account needed. ${esc(s.name||'The business')} replies using the phone or email you give.</p>
+        <div id="qOk"></div>
+      </form>
+    </div>`;
+  if(keepForm){$('#qName').value=existing.n;$('#qContact').value=existing.c;$('#qWhat').value=existing.w;$('#qDetails').value=existing.d}
+}
+
+function renderReqs(){
+  const list=$('#reqList');list.innerHTML='';
+  const open=state.reqs.filter(r=>!r.done).length;
+  const b=$('#badge');b.hidden=!open;b.textContent=open;
+  if(!state.reqs.length){list.innerHTML='<div class="empty">No requests yet.</div>';return}
+  state.reqs.forEach((r,i)=>{
+    const d=document.createElement('div');d.className='req'+(r.done?' done':'');
+    const h=document.createElement('h4');h.textContent=r.what;
+    const from=document.createElement('div');from.className='meta';from.textContent=`From ${r.name}, ${r.contact}`;
+    const p=document.createElement('p');p.textContent=r.details||'No extra details.';
+    const bt=document.createElement('button');bt.className='btn ghost sm';bt.textContent=r.done?'Mark as open':'Mark as replied';
+    bt.onclick=()=>{r.done=!r.done;renderReqs()};
+    d.append(h,from,p,bt);list.append(d);
+  });
+}
+
+/* editor bindings */
+const bind=(id,key)=>$(id).addEventListener('input',e=>{state[key]=e.target.value;renderPage(true)});
+bind('#fName','name');bind('#fCat','cat');bind('#fCity','city');bind('#fAbout','about');bind('#fSvc','svc');
+$('#fCat').addEventListener('change',e=>{state.cat=e.target.value;renderPage(true)});
+
+$('#addJob').addEventListener('click',()=>{
+  const title=$('#jTitle').value.trim(),b=$('#jBefore').files[0],a=$('#jAfter').files[0];
+  if(!title||!b||!a)return toast('Add a title plus both a before and an after photo.');
+  state.jobs.unshift({title,before:`url("${URL.createObjectURL(b)}")`,after:`url("${URL.createObjectURL(a)}")`});
+  $('#jTitle').value='';$('#jBefore').value='';$('#jAfter').value='';
+  renderPage(true);toast('Job added to your page.');
+});
+
+/* quote form (delegated since page re-renders) */
+document.addEventListener('submit',e=>{
+  if(e.target.id!=='qForm')return;
+  e.preventDefault();
+  const name=$('#qName').value.trim(),contact=$('#qContact').value.trim(),what=$('#qWhat').value.trim(),details=$('#qDetails').value.trim();
+  const ok=$('#qOk');
+  if(!name||!contact||!what){ok.innerHTML='<div class="ok" style="margin-top:12px;padding:12px 14px;border-radius:10px;background:#3a2330;border:1px solid #ff8aa0">Add your name, a phone or email, and what you need.</div>';return}
+  state.reqs.unshift({name,contact,what,details,done:false});
+  renderReqs();
+  ['#qName','#qContact','#qWhat','#qDetails'].forEach(s=>$(s).value='');
+  ok.innerHTML=`<div class="ok">Request sent to ${esc(state.name||'the business')}. They'll reply using what you entered. (Preview only, so it appears in their Requests tab.)</div>`;
+});
+
+/* tabs and mode */
+function tab(which){
+  const edit=which==='edit';
+  $('#tabEdit').setAttribute('aria-selected',edit);$('#tabReq').setAttribute('aria-selected',!edit);
+  $('#paneEdit').hidden=!edit;$('#paneReq').hidden=edit;
+}
+$('#tabEdit').onclick=()=>tab('edit');$('#tabReq').onclick=()=>tab('req');
+function mode(m){
+  state.mode=m;
+  $('#modeOwner').setAttribute('aria-pressed',m==='owner');$('#modeCust').setAttribute('aria-pressed',m==='cust');
+  $('#layout').classList.toggle('solo',m==='cust');
+}
+$('#modeOwner').onclick=()=>mode('owner');$('#modeCust').onclick=()=>mode('cust');
+
+$('#copy').onclick=async()=>{
+  const url='rfdflow.com/'+slug(state.name);
+  try{await navigator.clipboard.writeText(url);toast('Copied. This link is a preview and isn\'t live yet.')}
+  catch{toast('Your link would be '+url+'. It isn\'t live yet.')}
+};
+
+renderPage(false);renderReqs();
+</script>
+</body>
+</html>
